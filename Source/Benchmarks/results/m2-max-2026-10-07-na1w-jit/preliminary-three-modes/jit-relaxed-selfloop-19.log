@@ -1,0 +1,34 @@
+( uptime  )                    file:line     v| 
+(   0.000s)              loguru.cpp:665   INFO| arguments: /private/tmp/dppc-na1w-jit-20261007/bench1-relaxed-selfloop-quiet-x86_64 --jit
+(   0.001s)              loguru.cpp:668   INFO| Current dir: /Users/mihai/Developer/source/infinite-mac/dingusppc
+(   0.001s)              loguru.cpp:670   INFO| stderr verbosity: 0
+(   0.001s)              loguru.cpp:671   INFO| -----------------------------------
+(   0.002s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFE000000..0xFE00FFFF (Grackle)
+(   0.002s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFEC00000..0xFEEFFFFF (Grackle)
+(   0.002s)         memctrlbase.cpp:236   INFO| Added mem region 0x0..0x8FFF (RAM,) -> 0x0
+(   0.003s)              bench1.cpp:89    INFO| Test size: 0x8000
+(   0.003s)              bench1.cpp:90    INFO| First few bytes:
+(   0.003s)              bench1.cpp:136   INFO| PPC endian mode disabled
+(   0.003s)              bench1.cpp:152   INFO| Memory endian mode disabled
+(   0.003s)              bench1.cpp:168   INFO| Log instructions disabled
+(   0.003s)              bench1.cpp:171   INFO| Checksum: 0xF376152A
+(   0.003s)              bench1.cpp:175   INFO| Mode: jit (ppc_exec_until remains interpreter)
+(   0.004s)             ppcexec.cpp:109   INFO| power_off_reason changed to po_benchmark_exception at "/tmp/dppc-na1w-jit-20261007/source/benchmark/bench1.cpp":36
+(   0.004s)              bench1.cpp:197   INFO| Overhead Time: 0 ns
+(   0.004s)              bench1.cpp:200   INFO| Doing ppc_exec
+(   0.055s)              bench1.cpp:221   INFO| (1) 239667 ns, 130.3892 MiB/s
+(   0.105s)              bench1.cpp:221   INFO| (2) 237250 ns, 131.7176 MiB/s
+(   0.155s)              bench1.cpp:221   INFO| (3) 235292 ns, 132.8137 MiB/s
+(   0.205s)              bench1.cpp:221   INFO| (4) 235667 ns, 132.6024 MiB/s
+[T055] disp=2000000 trans=9 flush=0 native=1999999 cache=9 icyc=18001870 ctx=2000000/0/0/0/0/0/0/0
+(   0.256s)              bench1.cpp:221   INFO| (5) 235458 ns, 132.7201 MiB/s
+(   0.256s)              bench1.cpp:200   INFO| Doing ppc_exec_until
+(   0.280s)              bench1.cpp:221   INFO| (1) 118583 ns, 263.5285 MiB/s
+(   0.305s)              bench1.cpp:221   INFO| (2) 118542 ns, 263.6196 MiB/s
+(   0.331s)              bench1.cpp:221   INFO| (3) 119000 ns, 262.6050 MiB/s
+(   0.355s)              bench1.cpp:221   INFO| (4) 116542 ns, 268.1437 MiB/s
+(   0.380s)              bench1.cpp:221   INFO| (5) 115583 ns, 270.3685 MiB/s
+(   0.380s)              bench1.cpp:227   INFO| JIT native blocks: 2055000, interpreter handoffs: 0
+(   0.380s)              loguru.cpp:541   INFO| atexit
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa

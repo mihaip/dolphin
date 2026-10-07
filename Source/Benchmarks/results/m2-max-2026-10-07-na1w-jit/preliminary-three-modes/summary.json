@@ -1,0 +1,618 @@
+{
+  "runs": 30,
+  "samples_per_batch": 200,
+  "bytes_per_sample": 32768,
+  "checksum": "F376152A",
+  "input_prefix": [
+    "108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3",
+    "4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa"
+  ],
+  "commands": [
+    [
+      "interpreter",
+      [
+        "/private/tmp/dppc-na1w-jit-20261007/bench1-x86_64"
+      ]
+    ],
+    [
+      "jit-default",
+      [
+        "/private/tmp/dppc-na1w-jit-20261007/bench1-x86_64",
+        "--jit"
+      ]
+    ],
+    [
+      "jit-relaxed-selfloop",
+      [
+        "/private/tmp/dppc-na1w-jit-20261007/bench1-relaxed-selfloop-quiet-x86_64",
+        "--jit"
+      ]
+    ]
+  ],
+  "summary": {
+    "interpreter": {
+      "batches": 150,
+      "median_ns": 160125.0,
+      "min_ns": 140583,
+      "max_ns": 220208,
+      "mib_per_s": 195.160031225605
+    },
+    "interpreter-until-interpreter-control": {
+      "batches": 150,
+      "median_ns": 129041.0,
+      "min_ns": 114500,
+      "max_ns": 174000,
+      "mib_per_s": 242.17109290845545
+    },
+    "jit-default": {
+      "batches": 150,
+      "median_ns": 155208.0,
+      "min_ns": 141250,
+      "max_ns": 202125,
+      "mib_per_s": 201.34271429307768
+    },
+    "jit-default-until-interpreter-control": {
+      "batches": 150,
+      "median_ns": 123375.0,
+      "min_ns": 114625,
+      "max_ns": 161958,
+      "mib_per_s": 253.29280648429585
+    },
+    "jit-relaxed-selfloop": {
+      "batches": 150,
+      "median_ns": 236604.0,
+      "min_ns": 219792,
+      "max_ns": 277333,
+      "mib_per_s": 132.07722608239928
+    },
+    "jit-relaxed-selfloop-until-interpreter-control": {
+      "batches": 150,
+      "median_ns": 122562.5,
+      "min_ns": 114334,
+      "max_ns": 162625,
+      "mib_per_s": 254.97195308516064
+    }
+  },
+  "counters": [
+    {
+      "run": 1,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 1,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 1,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 2,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 2,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 2,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 3,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 3,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 3,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 4,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 4,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 4,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 5,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 5,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 5,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 6,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 6,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 6,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 7,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 7,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 7,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 8,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 8,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 8,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 9,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 9,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 9,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 10,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 10,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 10,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 11,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 11,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 11,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 12,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 12,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 12,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 13,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 13,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 13,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 14,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 14,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 14,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 15,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 15,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 15,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 16,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 16,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 16,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 17,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 17,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 17,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 18,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 18,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 18,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 19,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 19,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 19,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 20,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 20,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 20,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 21,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 21,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 21,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 22,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 22,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 22,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 23,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 23,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 23,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 24,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 24,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 24,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 25,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 25,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 25,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 26,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 26,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 26,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 27,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 27,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 27,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 28,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 28,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 28,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 29,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    },
+    {
+      "run": 29,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 29,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 30,
+      "mode": "jit-relaxed-selfloop",
+      "native_blocks": 2055000,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 30,
+      "mode": "interpreter",
+      "native_blocks": 0,
+      "interpreter_handoffs": 0
+    },
+    {
+      "run": 30,
+      "mode": "jit-default",
+      "native_blocks": 9000,
+      "interpreter_handoffs": 1000
+    }
+  ]
+}

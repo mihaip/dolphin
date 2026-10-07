@@ -1,0 +1,28 @@
+( uptime  )                    file:line     v| 
+(   0.000s)              loguru.cpp:665   INFO| arguments: /private/tmp/dppc-na1w-jit-20261007/bench1-paired-relaxed-selfloop-x86_64 --paired
+(   0.001s)              loguru.cpp:668   INFO| Current dir: /Users/mihai/Developer/source/infinite-mac/dingusppc
+(   0.001s)              loguru.cpp:670   INFO| stderr verbosity: 0
+(   0.001s)              loguru.cpp:671   INFO| -----------------------------------
+(   0.001s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFE000000..0xFE00FFFF (Grackle)
+(   0.001s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFEC00000..0xFEEFFFFF (Grackle)
+(   0.001s)         memctrlbase.cpp:236   INFO| Added mem region 0x0..0x8FFF (RAM,) -> 0x0
+(   0.003s)              bench1.cpp:90    INFO| Test size: 0x8000
+(   0.003s)              bench1.cpp:91    INFO| First few bytes:
+(   0.003s)              bench1.cpp:137   INFO| PPC endian mode disabled
+(   0.003s)              bench1.cpp:153   INFO| Memory endian mode disabled
+(   0.003s)              bench1.cpp:169   INFO| Log instructions disabled
+(   0.003s)              bench1.cpp:172   INFO| Checksum: 0xF376152A
+(   0.003s)              bench1.cpp:176   INFO| Mode: interpreter (ppc_exec_until remains interpreter)
+(   0.004s)             ppcexec.cpp:109   INFO| power_off_reason changed to po_benchmark_exception at "/tmp/dppc-na1w-jit-20261007/source/benchmark/bench1.cpp":36
+(   0.004s)              bench1.cpp:198   INFO| Overhead Time: 0 ns
+(   0.004s)              bench1.cpp:201   INFO| Paired interpreter/JIT ppc_exec samples
+(   0.094s)              bench1.cpp:223   INFO| Pair (1): interpreter 182625 ns, jit 235375 ns
+(   0.182s)              bench1.cpp:223   INFO| Pair (2): interpreter 182625 ns, jit 235250 ns
+(   0.270s)              bench1.cpp:223   INFO| Pair (3): interpreter 182917 ns, jit 235292 ns
+(   0.360s)              bench1.cpp:223   INFO| Pair (4): interpreter 183042 ns, jit 235542 ns
+[T055] disp=2000000 trans=9 flush=0 native=1999999 cache=9 icyc=35951774 ctx=2000000/0/0/0/0/0/0/0
+(   0.449s)              bench1.cpp:223   INFO| Pair (5): interpreter 182792 ns, jit 236000 ns
+(   0.449s)              bench1.cpp:256   INFO| JIT native blocks: 2055000, interpreter handoffs: 0
+(   0.449s)              loguru.cpp:541   INFO| atexit
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa

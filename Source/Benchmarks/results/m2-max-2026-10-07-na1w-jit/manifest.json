@@ -1,0 +1,22 @@
+{
+  "repo": "https://github.com/Na1w/dingusppc",
+  "branch": "jit-debugging",
+  "revision": "f59c271f852795a3b2d3cb5d0ed900b4d270fd0c",
+  "local_revision_branch": "benchmark-na1w-jit",
+  "host": "Apple M2 Max, macOS 15.7.9",
+  "execution": "x86_64 under Rosetta 2; no ARM64 JIT backend in this fork",
+  "compiler": "Apple Clang 17.0.0, Xcode 26.3",
+  "config": "Release -O3 -DNDEBUG, GNU C++20, x86_64, macOS 15.7 deployment, no LTO/sanitizers",
+  "SDL2": "universal /Library/Frameworks/SDL2.framework",
+  "primary_protocol": "30 processes per variant; alternating variant order; interleaved interpreter/JIT samples within process; 5 batches of 200 samples per mode; median batch minima and median paired batch ratios",
+  "checksum": "F376152A",
+  "timed_checksums_validated": 120000,
+  "binary_sha256": {
+    "bench1-paired-x86_64": "4776daa7c29610dc22567a5113e73ae71b98425aa21494fb688b1f60b8e256a0",
+    "bench1-paired-relaxed-selfloop-x86_64": "8643faa767dc981b2066dd698e35d246f4d2a895803069c9377ec29a419c9f4d"
+  },
+  "diagnostic_changes": [
+    "Raise JIT_MAX_SELFLOOP_REDISPATCH from 4 to 1000000",
+    "Omit unconditional t057_dump(\"final\") telemetry inside timed ppc_exec"
+  ]
+}

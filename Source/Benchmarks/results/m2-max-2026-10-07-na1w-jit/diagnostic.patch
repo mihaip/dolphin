@@ -1,0 +1,20 @@
+--- a/cpu/ppc/jit/jit.cpp
++++ b/cpu/ppc/jit/jit.cpp
+@@ -92,7 +92,7 @@
+     deliberately small: after a few native iterations the interpreter takes
+     over and lets the guest make progress. Exposed (external linkage) so the
+     regression test can assert the bound. */
+-extern constexpr uint32_t JIT_MAX_SELFLOOP_REDISPATCH = 4;
++extern constexpr uint32_t JIT_MAX_SELFLOOP_REDISPATCH = 1000000;
+ 
+ /** Count of times ppc_jit_exec() bailed out to the interpreter because a block
+     was judged to be making no forward progress: either its architectural
+@@ -859,7 +859,7 @@
+         power_on = true;
+         ppc_exec_interpreter();
+     }
+-    t057_dump("final");
++    // Benchmark diagnostic: omit the unconditional final telemetry dump.
+ }
+ 
+ /** Fallback for instructions the translator cannot handle.

@@ -145,3 +145,7 @@ The [upstream DingusPPC carry review](results/m2-max-2026-10-07-upstream-carry/)
 compares commit `74c60fcd` against its parent using upstream-only native builds.
 It also includes correctness checks and isolated Wasm handler measurements in
 V8 and JavaScriptCore, with and without LTO.
+
+The [Na1w DingusPPC JIT evaluation](results/m2-max-2026-10-07-na1w-jit/)
+measures its original x86-64 core under Rosetta and a diagnostic full-loop
+variant, using paired interpreter/JIT checksum samples.

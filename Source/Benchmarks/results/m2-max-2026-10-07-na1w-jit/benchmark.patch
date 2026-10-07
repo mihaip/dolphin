@@ -1,0 +1,109 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -538,7 +538,7 @@
+                             "${PROJECT_SOURCE_DIR}/cpu/ppc/*.cpp"
+                             "${PROJECT_SOURCE_DIR}/cpu/ppc/*.h"
+                             )
+-    add_executable(bench1 ${BENCH_SOURCES} $<TARGET_OBJECTS:core>
++    add_executable(bench1 ${BENCH_SOURCES} ${JIT_OBJECTS} $<TARGET_OBJECTS:core>
+                                            # $<TARGET_OBJECTS:cpu_ppc>
+                                            $<TARGET_OBJECTS:debugger>
+                                            $<TARGET_OBJECTS:devices>
+--- a/benchmark/bench1.cpp
++++ b/benchmark/bench1.cpp
+@@ -26,6 +26,10 @@
+ #include "devices/memctrl/mpc106.h"
+ #include <thirdparty/loguru/loguru.hpp>
+ #include <debugger/debugger.h>
++#include <cstring>
++
++extern uint64_t g_jit_native_blocks;
++extern uint64_t g_jit_noprogress_bails;
+ 
+ #if defined(PPC_BENCHMARKS)
+ void ppc_exception_handler(Except_Type exception_type, uint32_t srr1_bits) {
+@@ -51,6 +55,9 @@
+ 
+ int main(int argc, char** argv) {
+     int i, j;
++    bool use_jit = argc == 2 && std::strcmp(argv[1], "--jit") == 0;
++    bool paired = argc == 2 && std::strcmp(argv[1], "--paired") == 0;
++    if (argc > 1 && !use_jit && !paired) return 2;
+ 
+     /* initialize logging */
+     loguru::g_preamble_date    = false;
+@@ -164,6 +171,20 @@
+ 
+     LOG_F(INFO, "Checksum: 0x%08X", ppc_state.gpr[3]);
+     uint32_t checksum = ppc_state.gpr[3];
++    if (checksum != 0xF376152A) return 3;
++    g_exec_mode = (use_jit || paired) ? jit : interpreter;
++    LOG_F(INFO, "Mode: %s (ppc_exec_until remains interpreter)", use_jit ? "jit" : "interpreter");
++
++    // Compile and execute the JIT path once outside the measured samples.
++    ppc_state.pc = 0;
++    ppc_state.gpr[3] = 0x1000;
++    ppc_state.gpr[4] = test_size;
++    ppc_state.gpr[5] = 0;
++    power_on = true;
++    ppc_exec();
++    if (ppc_state.gpr[3] != checksum) return 4;
++    const uint64_t blocks_before = g_jit_native_blocks;
++    const uint64_t bails_before = g_jit_noprogress_bails;
+ 
+     // run the clock once for cache fill etc.
+     uint64_t overhead = -1;
+@@ -176,6 +197,32 @@
+     }
+     LOG_F(INFO, "Overhead Time: %lld ns", overhead);
+ 
++    if (paired) {
++        LOG_F(INFO, "Paired interpreter/JIT ppc_exec samples");
++        for (i = 0; i < test_iterations; i++) {
++            uint64_t best[2] = {uint64_t(-1), uint64_t(-1)};
++            for (j = 0; j < test_samples; j++) {
++                for (int order = 0; order < 2; order++) {
++                    int mode = (j + i + order) & 1;
++                    g_exec_mode = mode ? jit : interpreter;
++                    ppc_state.pc = 0;
++                    ppc_state.gpr[3] = 0x1000;
++                    ppc_state.gpr[4] = test_size;
++                    ppc_state.gpr[5] = 0;
++                    power_on = true;
++                    auto start_time = std::chrono::steady_clock::now();
++                    ppc_exec();
++                    auto end_time = std::chrono::steady_clock::now();
++                    auto ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
++                    if (ppc_state.gpr[3] != checksum) return 5;
++                    if (ns < best[mode]) best[mode] = ns;
++                }
++            }
++            LOG_F(INFO, "Pair (%d): interpreter %llu ns, jit %llu ns", i + 1,
++                  (unsigned long long)(best[0] - overhead),
++                  (unsigned long long)(best[1] - overhead));
++        }
++    } else {
+     for (int theproc = 0; theproc < 2; theproc++) {
+         LOG_F(INFO, "Doing %s", theproc ? "ppc_exec_until" : "ppc_exec");
+         for (i = 0; i < test_iterations; i++) {
+@@ -191,6 +238,7 @@
+                     (theproc) ? ppc_exec_until(0xC4) : ppc_exec();
+                 auto end_time     = std::chrono::steady_clock::now();
+                 auto time_elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time);
++                if (ppc_state.gpr[3] != checksum) return 5;
+                 if (time_elapsed.count() < best_sample)
+                     best_sample = time_elapsed.count();
+             }
+@@ -201,6 +249,12 @@
+         }
+     }
+ 
++    }
++
++    LOG_F(INFO, "JIT native blocks: %llu, interpreter handoffs: %llu",
++          (unsigned long long)(g_jit_native_blocks - blocks_before),
++          (unsigned long long)(g_jit_noprogress_bails - bails_before));
++
+     delete(grackle_obj);
+ 
+     return 0;
