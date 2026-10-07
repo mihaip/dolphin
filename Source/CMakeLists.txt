@@ -99,3 +99,7 @@ if (DSPTOOL)
 endif()
 
 # TODO: Add DSPSpy. Preferably make it option() and cpack component
+
+if (ENABLE_PPC_BENCHMARK)
+  add_subdirectory(Benchmarks)
+endif()
