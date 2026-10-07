@@ -1,0 +1,31 @@
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa
+( uptime  )                    file:line     v| 
+(   0.000s)              loguru.cpp:668   INFO| arguments: /tmp/dppc-carry-shared-20261006/shared
+(   0.000s)              loguru.cpp:671   INFO| Current dir: /Users/mihai/Developer/source/infinite-mac/dingusppc
+(   0.000s)              loguru.cpp:673   INFO| stderr verbosity: 0
+(   0.000s)              loguru.cpp:674   INFO| -----------------------------------
+(   0.000s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFE000000..0xFE00FFFF (Grackle)
+(   0.000s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFEC00000..0xFEEFFFFF (Grackle)
+(   0.000s)         memctrlbase.cpp:236   INFO| Added mem region 0x0..0x8FFF (RAM,) -> 0x0
+(   0.001s)              bench1.cpp:83    INFO| Test size: 0x8000
+(   0.001s)              bench1.cpp:84    INFO| First few bytes:
+(   0.001s)              bench1.cpp:130   INFO| PPC endian mode disabled
+(   0.001s)              bench1.cpp:146   INFO| Memory endian mode disabled
+(   0.001s)              bench1.cpp:162   INFO| Log instructions disabled
+(   0.001s)              bench1.cpp:165   INFO| Checksum: 0xF376152A
+(   0.001s)              bench1.cpp:177   INFO| Overhead Time: 0 ns
+(   0.001s)              bench1.cpp:180   INFO| Doing ppc_exec
+(   0.001s)             ppcexec.cpp:103   INFO| power_off_reason changed to po_benchmark_exception at "/Users/mihai/Developer/source/infinite-mac/dingusppc/benchmark/bench1.cpp":32
+(   0.013s)              bench1.cpp:200   INFO| (1) 58750 ns, 531.9149 MiB/s
+(   0.025s)              bench1.cpp:200   INFO| (2) 58833 ns, 531.1645 MiB/s
+(   0.037s)              bench1.cpp:200   INFO| (3) 58709 ns, 532.2864 MiB/s
+(   0.048s)              bench1.cpp:200   INFO| (4) 58750 ns, 531.9149 MiB/s
+(   0.060s)              bench1.cpp:200   INFO| (5) 58750 ns, 531.9149 MiB/s
+(   0.060s)              bench1.cpp:180   INFO| Doing ppc_exec_until
+(   0.072s)              bench1.cpp:200   INFO| (1) 58541 ns, 533.8139 MiB/s
+(   0.084s)              bench1.cpp:200   INFO| (2) 58583 ns, 533.4312 MiB/s
+(   0.096s)              bench1.cpp:200   INFO| (3) 58542 ns, 533.8048 MiB/s
+(   0.108s)              bench1.cpp:200   INFO| (4) 58541 ns, 533.8139 MiB/s
+(   0.120s)              bench1.cpp:200   INFO| (5) 58500 ns, 534.1880 MiB/s
+(   0.120s)              loguru.cpp:544   INFO| atexit

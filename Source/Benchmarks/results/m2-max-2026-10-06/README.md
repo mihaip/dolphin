@@ -219,3 +219,11 @@ Only 0.0215% of the boot's guest instructions were `adde`, compared with 44.4%
 in this checksum; extrapolating the checksum saving gives about 5 ms per boot.
 The linked results include raw logs, exact input hashes, counter instrumentation,
 identical desktop captures, and scripts for reproduction.
+
+### Reusing the 64-bit sum
+
+A [follow-up checksum experiment](carry-shared-sum/) derives DingusPPC's
+register result from the same 64-bit sum used for carry. This removes two
+ARM64 instructions from the hot handler, but both wide-carry variants measured
+58.625 µs in a matched thirty-run comparison, versus 80.291 µs for the original
+handler. The folder contains both patches, raw timings, and assembly.

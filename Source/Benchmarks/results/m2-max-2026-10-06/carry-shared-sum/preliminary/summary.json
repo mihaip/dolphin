@@ -1,0 +1,51 @@
+{
+  "baseline": {
+    "ppc_exec": {
+      "median_ns": 80541.5,
+      "minimum_ns": 80083,
+      "maximum_ns": 93583,
+      "batch_minima": 50
+    },
+    "ppc_exec_until": {
+      "median_ns": 80542.0,
+      "minimum_ns": 80209,
+      "maximum_ns": 86458,
+      "batch_minima": 50
+    }
+  },
+  "wide": {
+    "ppc_exec": {
+      "median_ns": 58979.0,
+      "minimum_ns": 58458,
+      "maximum_ns": 62958,
+      "batch_minima": 50
+    },
+    "ppc_exec_until": {
+      "median_ns": 60250.0,
+      "minimum_ns": 58458,
+      "maximum_ns": 62917,
+      "batch_minima": 50
+    }
+  },
+  "shared": {
+    "ppc_exec": {
+      "median_ns": 60250.0,
+      "minimum_ns": 58333,
+      "maximum_ns": 68833,
+      "batch_minima": 50
+    },
+    "ppc_exec_until": {
+      "median_ns": 60250.0,
+      "minimum_ns": 58583,
+      "maximum_ns": 62959,
+      "batch_minima": 50
+    }
+  },
+  "protocol": "10 rotated runs per variant; 5 batches of 200 samples per entry point",
+  "checksum": "0xF376152A",
+  "binaries_sha256": {
+    "baseline": "c32cee8b02ef1bab22e904dbe22e9da406f7d3f738926fb3ffbae1b613e113b1",
+    "wide": "b69b61e0db5f9db593c701bb3f5a78c103dda7a1228d07c22780248fef6ac872",
+    "shared": "afed32959a83b6fe5d25ab76594600d3f4532f3f59261866bfe6bde5228fa425"
+  }
+}
