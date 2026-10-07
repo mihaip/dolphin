@@ -22,6 +22,7 @@ def main():
         ('dingus', [str(args.dingus.resolve())]),
         ('pearpc', [str(args.pearpc.resolve()), 'bench']),
         ('dolphin-interpreter', [str(args.dolphin.resolve()), 'interpreter']),
+        ('dolphin-jit', [str(args.dolphin.resolve()), 'jit']),
     ]
     records = []
     input_bytes = None

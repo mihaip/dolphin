@@ -19,6 +19,9 @@
 #include "Core/HLE/HLE.h"
 #include "Core/HW/CPU.h"
 #include "Core/HW/Memmap.h"
+#include "Core/MemTools.h"
+#include "Core/PowerPC/JitCommon/JitBase.h"
+#include "Core/PowerPC/JitInterface.h"
 #include "Core/PowerPC/PowerPC.h"
 #include "Core/System.h"
 
@@ -40,9 +43,18 @@ int main(int argc, char** argv)
   PowerPC::CPUCore core = PowerPC::CPUCore::CachedInterpreter;
   if (argc == 2 && std::strcmp(argv[1], "interpreter") == 0)
     core = PowerPC::CPUCore::Interpreter;
+  else if (argc == 2 && std::strcmp(argv[1], "jit") == 0)
+  {
+    core = PowerPC::DefaultCPUCore();
+    if (core != PowerPC::CPUCore::JIT64 && core != PowerPC::CPUCore::JITARM64)
+    {
+      std::fprintf(stderr, "Native-code JIT is unavailable on this host.\n");
+      return 1;
+    }
+  }
   else if (argc != 1 && !(argc == 2 && std::strcmp(argv[1], "cached") == 0))
   {
-    std::fprintf(stderr, "Usage: %s [cached|interpreter]\n", argv[0]);
+    std::fprintf(stderr, "Usage: %s [cached|interpreter|jit]\n", argv[0]);
     return 1;
   }
 
@@ -67,6 +79,10 @@ int main(int argc, char** argv)
   auto& power_pc = system.GetPowerPC();
   auto& state = system.GetPPCState();
   auto& timing = system.GetCoreTiming();
+  const bool native_jit = core == PowerPC::CPUCore::JIT64 || core == PowerPC::CPUCore::JITARM64;
+  const bool exception_handler = native_jit && EMM::IsExceptionHandlerSupported();
+  if (exception_handler)
+    EMM::InstallExceptionHandler();
   memory.Init();
   timing.Init();
   cpu.Init(core);
@@ -116,9 +132,15 @@ int main(int argc, char** argv)
     }
   };
   prepare();
-  power_pc.RunLoop();  // Warm the decoded block cache before measuring.
+  power_pc.RunLoop();  // Warm the decoded/native block cache before measuring.
   verify();
   std::printf("Checksum: 0x%08X\n", state.gpr[3]);
+  if (native_jit)
+  {
+    const auto& options = static_cast<const JitBase*>(system.GetJitInterface().GetCore())->jo;
+    std::printf("JIT settings: fastmem=%d, block-linking=%d, memcheck=%d\n", options.fastmem,
+                options.enableBlocklink, options.memcheck);
+  }
 
   u64 overhead = std::numeric_limits<u64>::max();
   for (u32 j = 0; j < test_samples; ++j)
@@ -152,6 +174,8 @@ int main(int argc, char** argv)
 
   HLE::Clear();
   cpu.Shutdown();
+  if (exception_handler)
+    EMM::UninstallExceptionHandler();
   timing.Shutdown();
   memory.Shutdown();
   Core::UndeclareAsCPUThread();

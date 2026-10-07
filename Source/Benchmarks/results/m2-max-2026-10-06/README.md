@@ -8,7 +8,8 @@ Build commands, pinned revisions, and remaining compiler-flag differences are
 in [the benchmark README](../../README.md).
 
 Ten process invocations per mode were executed sequentially, rotating order
-across Dolphin cached, DingusPPC, PearPC, and Dolphin plain interpreter.
+across Dolphin cached, DingusPPC, PearPC, Dolphin plain interpreter, and Dolphin
+ARM64 JIT.
 Each invocation warms the CPU once, then reports five minima, each over 200
 executions of the 32 KiB checksum. DingusPPC does this for both of its run entry
 points. Values below are the median of the resulting 50 batch minima per mode.
@@ -17,16 +18,30 @@ time. Clock overhead was zero at the host clock's observed resolution.
 
 | Core / entry point | Median batch minimum | Throughput | Range of batch minima |
 | --- | ---: | ---: | ---: |
-| DingusPPC `ppc_exec` | 80.395 µs | 388.70 MiB/s | 80.208–82.875 µs |
-| DingusPPC `ppc_exec_until` | 82.354 µs | 379.46 MiB/s | 80.125–82.833 µs |
-| PearPC generic interpreter | 73.083 µs | 427.60 MiB/s | 71.083–73.583 µs |
-| Dolphin Cached Interpreter | 98.334 µs | 317.79 MiB/s | 97.833–106.125 µs |
-| Dolphin plain interpreter | 321.688 µs | 97.14 MiB/s | 319.250–329.875 µs |
+| DingusPPC `ppc_exec` | 80.334 µs | 389.00 MiB/s | 80.125–83.834 µs |
+| DingusPPC `ppc_exec_until` | 80.291 µs | 389.21 MiB/s | 80.041–84.000 µs |
+| PearPC generic interpreter | 71.084 µs | 439.62 MiB/s | 71.041–74.250 µs |
+| Dolphin Cached Interpreter | 91.188 µs | 342.70 MiB/s | 90.875–119.000 µs |
+| Dolphin plain interpreter | 313.771 µs | 99.60 MiB/s | 312.083–320.916 µs |
+| Dolphin ARM64 JIT | 19.980 µs | 1564.10 MiB/s | 19.958–21.416 µs |
 
-Dolphin cached takes **22.3% more time than DingusPPC's `ppc_exec`** on this
-benchmark (18.2% lower throughput). PearPC takes 9.1% less time than DingusPPC
-(10.0% higher throughput). Within Dolphin, cached is **3.27× faster** than
-its plain interpreter.
+Dolphin cached takes **13.5% more time than DingusPPC's `ppc_exec`**
+on this benchmark (11.9% lower throughput). PearPC takes 11.5% less time
+than DingusPPC (13.0% higher throughput). Within Dolphin, cached is
+**3.44× faster** than its plain interpreter.
+
+Dolphin's **ARM64 JIT takes 19.980 µs**, making it **4.02× faster than
+DingusPPC**, **4.56× faster than Dolphin cached**, and 3.56× faster than PearPC.
+The logs confirm `JITARM64`, fastmem enabled, block linking enabled, and JIT
+extra MMU/watchpoint checks off (`memcheck=0`). These are normal default JIT
+settings for the physical-addressed, watchpoint-free benchmark. The warmup
+compiles its native blocks outside the measured samples.
+
+The table is a fresh matched run of all cores after adding JIT selection to the
+harness. No emulator CPU implementation changed. Dolphin cached measured
+91.188 µs here versus 98.334 µs in the original run; binary layout and run
+conditions can shift these small-loop results. Use the matched table for ratios.
+The original measurements and the separate diagnostic analysis remain saved.
 
 All runs completed successfully with identical printed input bytes and checksum
 `0xF376152A`. Dolphin independently verifies the checksum and absence of CPU
@@ -48,9 +63,10 @@ covers Cached Interpreter 2.0. This measurement uses the implementation from
 October 2026 upstream, including its subsequent changes, rather than the exact
 2024 version.
 
-Files: `batches.csv` contains every reported batch minimum; `summary.json`
-contains the aggregation and command paths; the 40 `.log` files preserve complete
-stdout/stderr. Initialization and printing are outside each sample. No CPU
+Files: [jit-comparison/](jit-comparison/) contains every reported batch minimum
+in `batches.csv`, the aggregation and command paths in `summary.json`, and
+complete stdout/stderr in 50 `.log` files. The original comparison without JIT
+remains in the adjacent CSV, JSON, and 40 log files. Initialization and printing are outside each sample. No CPU
 frequency or affinity was forced, and the original minimum-sample method is
 retained. Repeat on your own hardware before generalizing these results.
 

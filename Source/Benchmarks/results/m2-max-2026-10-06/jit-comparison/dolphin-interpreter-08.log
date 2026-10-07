@@ -1,0 +1,12 @@
+Core: Interpreter64
+Test size: 0x8000
+First few bytes:
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa
+Checksum: 0xF376152A
+Overhead Time: 0 ns
+(1) 313833 ns, 99.5753 MiB/s
+(2) 313541 ns, 99.6680 MiB/s
+(3) 312584 ns, 99.9731 MiB/s
+(4) 312083 ns, 100.1336 MiB/s
+(5) 313000 ns, 99.8403 MiB/s

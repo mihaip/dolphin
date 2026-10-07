@@ -9,8 +9,10 @@ specific; the comparison runner checks the input prefix and checksum match.
 
 The default core is Dolphin's **Cached Interpreter**, explicitly selected with
 `PowerPC::CPUCore::CachedInterpreter`. `interpreter` selects Dolphin's plain
-interpreter for a within-Dolphin comparison. This benchmark does not boot a game,
-initialize graphics/audio devices, or use a native-code JIT. It calls the normal
+interpreter; `jit` selects the host's native-code JIT (ARM64 on Apple Silicon,
+x86-64 on Intel/AMD), with Dolphin's default optimizations and fastmem settings.
+Unsupported hosts reject `jit`. This benchmark does not boot a game or
+initialize graphics/audio devices. It calls the normal
 `PowerPCManager::RunLoop`; no CPU implementation files are changed.
 
 The only guest-code adaptation replaces DingusPPC's invalid-instruction sentinel
@@ -20,7 +22,9 @@ The no-frontend host callbacks are copied from `Source/UnitTests/StubHost.cpp`,
 with `Host_Message` also ending the plain interpreter's current timing slice.
 Start/stop conventions differ between emulators; their costs remain in the
 measured time. Preparation and checksum validation are outside the timed region.
-The decoded cache remains warm between samples. Configuration uses a temporary
+The decoded/native code cache remains warm between samples; compilation is
+excluded by the warmup. Native JIT runs install Dolphin's normal exception
+handler for fastmem and return-stack faults. Configuration uses a temporary
 user directory, so an installed Dolphin's settings do not affect the run.
 
 ## Build and run Dolphin
@@ -43,6 +47,7 @@ cmake -S . -B build-bench -G Ninja \
 cmake --build build-bench --target ppc-bench --parallel 8
 build-bench/Binaries/ppc-bench cached
 build-bench/Binaries/ppc-bench interpreter
+build-bench/Binaries/ppc-bench jit
 ```
 
 Normal Dolphin build dependencies still apply (for example CMake, Ninja and

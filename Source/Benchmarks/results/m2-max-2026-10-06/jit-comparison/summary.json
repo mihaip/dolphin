@@ -1,0 +1,90 @@
+{
+  "runs": 10,
+  "samples_per_batch": 200,
+  "bytes_per_sample": 32768,
+  "checksum": "F376152A",
+  "input_prefix": [
+    "108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3",
+    "4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa"
+  ],
+  "commands": [
+    [
+      "dolphin-cached",
+      [
+        "/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench",
+        "cached"
+      ]
+    ],
+    [
+      "dingus",
+      [
+        "/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/bin/Release/bench1"
+      ]
+    ],
+    [
+      "pearpc",
+      [
+        "/Users/mihai/Developer/source/infinite-mac/pearpc/build-native-bench/source/src/ppc",
+        "bench"
+      ]
+    ],
+    [
+      "dolphin-interpreter",
+      [
+        "/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench",
+        "interpreter"
+      ]
+    ],
+    [
+      "dolphin-jit",
+      [
+        "/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench",
+        "jit"
+      ]
+    ]
+  ],
+  "summary": {
+    "dingus-exec": {
+      "batches": 50,
+      "median_ns": 80334.0,
+      "min_ns": 80125,
+      "max_ns": 83834,
+      "mib_per_s": 389.0009211541813
+    },
+    "dingus-exec-until": {
+      "batches": 50,
+      "median_ns": 80291.0,
+      "min_ns": 80041,
+      "max_ns": 84000,
+      "mib_per_s": 389.20925134822085
+    },
+    "dolphin-cached": {
+      "batches": 50,
+      "median_ns": 91187.5,
+      "min_ns": 90875,
+      "max_ns": 119000,
+      "mib_per_s": 342.7004797806717
+    },
+    "dolphin-interpreter": {
+      "batches": 50,
+      "median_ns": 313770.5,
+      "min_ns": 312083,
+      "max_ns": 320916,
+      "mib_per_s": 99.59508621747423
+    },
+    "dolphin-jit": {
+      "batches": 50,
+      "median_ns": 19979.5,
+      "min_ns": 19958,
+      "max_ns": 21416,
+      "mib_per_s": 1564.1032057859306
+    },
+    "pearpc": {
+      "batches": 50,
+      "median_ns": 71084.0,
+      "min_ns": 71041,
+      "max_ns": 74250,
+      "mib_per_s": 439.6207304034663
+    }
+  }
+}

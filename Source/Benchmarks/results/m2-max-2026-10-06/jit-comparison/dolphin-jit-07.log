@@ -1,0 +1,13 @@
+Core: JITARM64
+Test size: 0x8000
+First few bytes:
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa
+Checksum: 0xF376152A
+JIT settings: fastmem=1, block-linking=1, memcheck=0
+Overhead Time: 0 ns
+(1) 19958 ns, 1565.7882 MiB/s
+(2) 19958 ns, 1565.7882 MiB/s
+(3) 20000 ns, 1562.5000 MiB/s
+(4) 19958 ns, 1565.7882 MiB/s
+(5) 19958 ns, 1565.7882 MiB/s
