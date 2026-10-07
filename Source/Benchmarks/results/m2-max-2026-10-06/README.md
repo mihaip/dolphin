@@ -209,3 +209,13 @@ files show the exact modification. The adjacent `dingus-carry64.patch` records t
 a 64-bit sum with bit 32 packed back into XER.CA. Its guest code and other flag
 handling are unchanged; apply it to the pinned DingusPPC revision and rebuild
 the native `bench1` target.
+
+### Native Mac OS X boot control
+
+The [Mac OS X 10.1.5 boot experiment](native-boot-10.1/) tests that DingusPPC
+carry patch against a full Beige G3 boot. Six paired runs showed no detectable
+improvement: baseline and optimized mean times were 41.597 s and 41.677 s.
+Only 0.0215% of the boot's guest instructions were `adde`, compared with 44.4%
+in this checksum; extrapolating the checksum saving gives about 5 ms per boot.
+The linked results include raw logs, exact input hashes, counter instrumentation,
+identical desktop captures, and scripts for reproduction.

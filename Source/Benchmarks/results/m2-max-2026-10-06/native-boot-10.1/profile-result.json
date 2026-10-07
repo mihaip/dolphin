@@ -1,0 +1,22 @@
+{
+  "variant": "profile",
+  "command": [
+    "/tmp/dppc-carry-10.1/profile.app/Contents/MacOS/dingusppc",
+    "--deterministic",
+    "--mon_id=Multiscan17in",
+    "--log-to-stderr",
+    "-b",
+    "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+    "--hdd_img",
+    "disk.hda",
+    "--rambank1_size=128"
+  ],
+  "cwd": "/tmp/dppc-carry-10.1/profile-verify",
+  "endpoint_ns": 160000000000,
+  "termination": "SIGTERM after endpoint, intentional",
+  "pid": 3116,
+  "host_seconds": 42.44,
+  "guest_ns": 160000000016,
+  "pc": "0x00090af4",
+  "marker": "(  42.440s)                main.cpp:458   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5"
+}

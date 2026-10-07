@@ -1,0 +1,66 @@
+--- a/cpu/ppc/ppcopcodes.cpp
++++ b/cpu/ppc/ppcopcodes.cpp
+@@ -30,6 +30,9 @@
+ 
+ #include <cinttypes>
+ #include <vector>
++
++uint64_t diag_calls[4]{}, diag_taken[4]{}, diag_inputs[4]{}, diag_changes[4]{};
++static bool diag_last[4]{};
+ 
+ static int junction_temperature = 24;
+ static TimerInfo thermal_timer;
+@@ -153,6 +156,12 @@
+     ppc_grab_regsdab(opcode);
+     uint32_t xer_ca       = !!(ppc_state.spr[SPR::XER] & XER::CA);
+     uint32_t ppc_result_d = ppc_result_a + ppc_result_b + xer_ca;
++    constexpr unsigned variant = (rec ? 1 : 0) | (ov ? 2 : 0);
++    bool taken = (ppc_result_d < ppc_result_a) || (xer_ca && ppc_result_d == ppc_result_a);
++    if (diag_calls[variant]) diag_changes[variant] += (taken != diag_last[variant]);
++    ++diag_calls[variant]; diag_taken[variant] += taken; diag_inputs[variant] += xer_ca;
++    diag_last[variant] = taken;
++
+ 
+     if ((ppc_result_d < ppc_result_a) || (xer_ca && (ppc_result_d == ppc_result_a))) {
+         ppc_state.spr[SPR::XER] |= XER::CA;
+--- a/cpu/ppc/ppcexec.cpp
++++ b/cpu/ppc/ppcexec.cpp
+@@ -68,6 +68,7 @@
+ static constexpr uint32_t HID0_SLEEP = 0x00200000;
+ static constexpr uint32_t HID0_POWER_SAVE_MASK = HID0_DOZE | HID0_NAP | HID0_SLEEP;
+ 
++uint64_t diag_total = 0;
+ bool is_deterministic = false;
+ 
+ bool power_on = false;
+@@ -313,6 +314,7 @@
+ /* Dispatch using primary and modifier opcode */
+ void ppc_main_opcode(PPCOpcode *opcodeGrabber, uint32_t opcode)
+ {
++    ++diag_total;
+ #ifdef CPU_PROFILING
+     num_executed_instrs++;
+ #if defined(CPU_PROFILING_OPS)
+--- a/main.cpp
++++ b/main.cpp
+@@ -50,6 +50,7 @@
+ #else
+ #include <unistd.h>
+ #endif
++extern uint64_t diag_total, diag_calls[4], diag_taken[4], diag_inputs[4], diag_changes[4];
+ using namespace std;
+ 
+ extern bool g_auto_grab_mouse;
+@@ -455,5 +456,12 @@
+             ctx.simplified = false;
+             auto op_name = disassemble_single(&ctx);
+             LOG_F(INFO, "TS=%016llu PC=0x%08x executing %s", get_virt_time_ns(), ppc_state.pc, op_name.c_str());
++            LOG_F(INFO, "CARRY total=%llu calls=%llu,%llu,%llu,%llu taken=%llu inputs=%llu changes=%llu",
++                (unsigned long long)diag_total,
++                (unsigned long long)diag_calls[0], (unsigned long long)diag_calls[1],
++                (unsigned long long)diag_calls[2], (unsigned long long)diag_calls[3],
++                (unsigned long long)(diag_taken[0]+diag_taken[1]+diag_taken[2]+diag_taken[3]),
++                (unsigned long long)(diag_inputs[0]+diag_inputs[1]+diag_inputs[2]+diag_inputs[3]),
++                (unsigned long long)(diag_changes[0]+diag_changes[1]+diag_changes[2]+diag_changes[3]));
+         });
+     }

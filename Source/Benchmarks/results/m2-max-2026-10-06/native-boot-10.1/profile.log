@@ -1,0 +1,816 @@
+( uptime  )                    file:line     v| 
+(   0.000s)              loguru.cpp:668   INFO| arguments: /tmp/dppc-carry-10.1/profile.app/Contents/MacOS/dingusppc --deterministic --mon_id=Multiscan17in --log-to-stderr -b /Users/mihai/Developer/Retro/ROMs/4MB\ ROMs/1997-11\ -\ 78F57389\ -\ Power\ Mac\ G3\ (v3).ROM --hdd_img disk.hda --rambank1_size=128
+(   0.000s)              loguru.cpp:671   INFO| Current dir: /private/tmp/dppc-carry-10.1/profile-verify
+(   0.000s)              loguru.cpp:673   INFO| stderr verbosity: 0
+(   0.000s)              loguru.cpp:674   INFO| -----------------------------------
+(   0.003s)      machinefactory.cpp:526   INFO| Found match (1/1):
+(   0.003s)      machinefactory.cpp:528   INFO|     ROM description: Power Mac G3 (v3)
+(   0.003s)      machinefactory.cpp:530   INFO|     Machine identified from ROM: Power Mac G3 Beige
+(   0.003s)      machinefactory.cpp:602   INFO|     ROM Version: 077d.45f2
+(   0.003s)      machinefactory.cpp:606   INFO|     ConfigInfo.BootstrapVersion: "Boot Gossamer 0."
+(   0.003s)      machinefactory.cpp:638   INFO|     ROM Checksum: 0x78f57389
+(   0.003s)      machinefactory.cpp:642   INFO|     ROM Checksum (64-bit): 0x7b8375af2e19914d
+(   0.003s)                main.cpp:292   INFO| Machine detected from ROM as: pmg3dt
+Device Grackle Settings
+------------------------------------
+                  pci_A1 : 
+                  pci_B1 : 
+                  pci_C1 : 
+                 pci_J12 : 
+               pci_PERCH : 
+Device AdbBus Settings
+------------------------------------
+             adb_devices : Mouse,Keyboard
+Device MeshHeathrow Settings
+------------------------------------
+           bluescsi_dir2 : 
+      bluescsi_send_dir2 : 
+                cdr_img2 : 
+                hdd_img2 : 
+Device Escc Settings
+------------------------------------
+          serial_backend : null
+Device Swim3 Settings
+------------------------------------
+                 fdd_fmt : 
+                 fdd_img : 
+             fdd_wr_prot : on
+Device AtaHardDisk Settings
+------------------------------------
+                 hdd_img : disk.hda
+Device AtapiCdrom Settings
+------------------------------------
+                 cdr_img : 
+Device MachineGossamerDesktop Settings
+------------------------------------
+              cdr_config : Ide1:0
+                    emmo : off
+              hdd_config : Ide0:0
+                 pci_GPU : AtiRageGT
+           rambank1_size : 128
+           rambank2_size : 0
+           rambank3_size : 0
+BootROM path: /Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM
+Execution mode: 0
+Using deterministic execution mode; disk, NVRAM, and PRAM changes will not be saved.
+Mouse and keyboard input will be ignored.
+(   0.135s)      machinefactory.cpp:210   INFO| Initializing Power Macintosh G3 (Beige) Desktop hardware...
+(   0.212s)   soundserver_cubeb.cpp:85    INFO| Connected to backend: audiounit
+(   0.212s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFE000000..0xFE00FFFF (Grackle)
+(   0.212s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFEC00000..0xFEEFFFFF (Grackle)
+(   0.212s)       atabasedevice.cpp:47    INFO| ATA-HD: hard-reset triggered
+(   0.212s)       atabasedevice.cpp:47    INFO| ATAPI-CDROM: hard-reset triggered
+(   0.212s)     machinegossamer.cpp:136   INFO| Building machine Gossamer...
+(   0.212s)         memctrlbase.cpp:359   INFO| Added mmio region 0xFF000000..0xFF000FFF (Machine-id)
+(   0.213s)         memctrlbase.cpp:236   INFO| Added mem region 0xFFC00000..0xFFFFFFFF (ROM,) -> 0x0
+(   0.213s)                spdram.h:114   INFO| SDRAM capacity set to 128MB, I2C addr = 0x57
+(   0.213s)                   i2c.h:65    INFO| New I2C device, address = 0x57
+(   0.213s)                   i2c.h:65    INFO| New I2C device, address = 0x28
+(   0.213s)                   i2c.h:65    INFO| New I2C device, address = 0x53
+(   0.213s)         metaimgfile.cpp:246   INFO| { MetaImgFile: Open "disk.hda".
+APM Block 0 contents
+000: sbSig      : 'ER' = sbSIGWord
+002: sbBlkSize  : 512
+004: sbBlkCount : 8388608 = 4294 MB = 4096 MiB
+012: DDMap[0]:  23 @ 64   0x0001 = kDriverTypeMacSCSI         
+01a: DDMap[1]:  36 @ 120  0xffff = kDriverTypeMacSCSIChained  
+022: DDMap[2]:  21 @ 176  0x0701 = kDriverTypeMacATA          
+02a: DDMap[3]:  34 @ 232  0xf8ff = kDriverTypeMacATAChained   
+
+Partition Map contents (10 partitions)
+ 1:         63 @ 1          Type:"Apple_partition_map" Name:"Apple" Status:00000003=Valid,Allocated Pad:0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+ 2:         56 @ 64         Type:"Apple_Driver43" Name:"Macintosh" Status:00000103=Valid,Allocated,ChainCompatible BootSize:11286 BootCksum:0x0000F1F0 Processor:"68000" Pad:7074445200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff = 'ptDR' = kPatchDriverSignature
+ 3:         56 @ 120        Type:"Apple_Driver43" Name:"Macintosh" Status:00000303=Valid,Allocated,ChainCompatible,RealDeviceDriver BootSize:18142 BootCksum:0x0000040F Processor:"68000" Pad:0001060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff00 = kSCSIDriverSignature
+ 4:         56 @ 176        Type:"Apple_Driver_ATA" Name:"Macintosh" Status:00000103=Valid,Allocated,ChainCompatible BootSize:10490 BootCksum:0x00007EB4 Processor:"68000" Pad:7074445200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff = 'ptDR' = kPatchDriverSignature
+ 5:         56 @ 232        Type:"Apple_Driver_ATA" Name:"Macintosh" Status:00000303=Valid,Allocated,ChainCompatible,RealDeviceDriver BootSize:17052 BootCksum:0x0000E2E7 Processor:"68000" Pad:77696b6900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff = 'wiki' = kATADriverSignature
+ 6:        512 @ 288        Type:"Apple_FWDriver" Name:"Macintosh" Status:00000003=Valid,Allocated Pad:0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+ 7:        512 @ 800        Type:"Apple_Driver_IOKit" Name:"Macintosh" Status:00000003=Valid,Allocated Pad:0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+ 8:        512 @ 1312       Type:"Apple_Patches" Name:"Patch Partition" Status:00000003=Valid,Allocated BootEntry:0x00000001 Pad:0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+ 9:    8386776 @ 1824       Type:"Apple_HFS" Name:"Macintosh HD" Status:4000003B=Valid,Allocated,Bootable,Readable,Writeable,MountedAtStartup LgBootStart:7077 BootSize:737280 BootAddr:0x01C00000 BootEntry:0x01C00510 Processor:"powerpc" Pad:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000676f6f6e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+10:          8 @ 8388600    Type:"Apple_Free" DataCnt:0 Pad:000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000(   0.214s)         metaimgfile.cpp:246   INFO| } 0.001 s: MetaImgFile: Open "disk.hda".
+(   0.214s)               atahd.cpp:348   INFO| ATA-HD: total sectors 8388608
+(   0.214s)               atahd.cpp:383   WARN| ATA-HD: could not find a suitable CHS translation; increased sectors to 8388864
+(   0.214s)               atahd.cpp:390   INFO| ATA-HD: C=15888, H=16, S=33
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff
+
+Chunks
+   8388608 @ 0          bytes:[0 4294967296) offset:0
+Device AtiRageGT Settings
+------------------------------------
+             gfxmem_size : 2
+                  mon_id : Multiscan17in
+(   0.245s)         display_sdl.cpp:118   INFO| Renderer "metal" max size: 16384 x 16384
+(   0.245s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 1280 x 960   display:  640 x 480   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(   0.246s)           displayid.cpp:252   INFO| DisplayID mode set to AppleSense
+(   0.246s)           displayid.cpp:253   INFO| Standard sense code: 6
+(   0.246s)           displayid.cpp:254   INFO| Extended sense code: 0x0B
+(   0.246s)                   i2c.h:65    INFO| New I2C device, address = 0x45
+(   0.246s)      machinefactory.cpp:233   INFO| Initialization completed.
+(   0.246s)             ppcexec.cpp:104   INFO| power_off_reason changed to po_starting_up at "/Users/mihai/Developer/source/infinite-mac/dingusppc/main.cpp":491
+(   0.246s)             ppcexec.cpp:104   INFO| power_off_reason changed to po_none at "/Users/mihai/Developer/source/infinite-mac/dingusppc/debugger/debugger.cpp":747
+(   0.247s)         memctrlbase.cpp:359   INFO| Added mmio region 0xF3000000..0xF307FFFF (mac-io_heathrow)
+(   0.247s)           maciobase.cpp:106   INFO| mac-io_heathrow: base address set to 0xF3000000
+(   0.247s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 033eff3a
+(   0.247s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffa
+(   0.247s)             viacuda.cpp:198   WARN| Attempted write to VIA Port A!
+(   0.247s)             viacuda.cpp:321   INFO| VIA SR interrupt enabled
+(   0.248s)             viacuda.cpp:819   INFO| Cuda: send 1 to PB0
+(   0.248s)             viacuda.cpp:925   WARN| Unsupported I2C device 0x56
+(   0.249s)             viacuda.cpp:925   WARN| Unsupported I2C device 0x55
+(   0.249s)              mpc106.cpp:272   INFO| banks:
+(   0.249s)              mpc106.cpp:274   INFO| bank 0: [00000000..07FFFFFF]
+(   0.258s)         memctrlbase.cpp:236   INFO| Added mem region 0x0..0x7FFFFFF (RAM,) -> 0x0
+(   0.736s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 21befffa
+(   0.739s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(   0.741s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = e1befffa
+(   0.744s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(   0.744s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffa
+(   0.754s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   0.780s)       atabasedevice.cpp:47    INFO| ATAPI-CDROM: soft-reset triggered
+(   0.814s)             viacuda.cpp:677   INFO| Cuda: autopoll started, rate: 11 ms
+(   0.816s)      hostevents_sdl.cpp:395   INFO| Current keyboard state:
+(   0.816s)      hostevents_sdl.cpp:397   INFO|     Modifiers:
+(   0.816s)      hostevents_sdl.cpp:409   INFO|         (none)
+(   0.816s)      hostevents_sdl.cpp:411   INFO|     Keys and Modifiers:
+(   0.816s)      hostevents_sdl.cpp:442   INFO|         (none)
+(   0.913s)                main.cpp:458   INFO| TS=0000001000000032 PC=0xff80d074 executing bc      4, 6, 0xFF80D084
+(   0.913s)                main.cpp:465   INFO| CARRY total=62500005 calls=140,0,0,0 taken=0 inputs=0 changes=0
+(   0.914s)              mpc106.cpp:87     ERR| Grackle err: read attempt from non-existent PCI device 00:0c.0 @00.l
+(   0.914s)             atirage.cpp:206   INFO| ati-rage@pci_GPU: I/O space address set to 0x00000000
+(   0.930s)             atirage.cpp:206   INFO| ati-rage@pci_GPU: I/O space address set to 0x00000C00
+(   0.943s)             atirage.cpp:916   INFO| ati-rage@pci_GPU: clock_sel:3 fb_div:98
+(   0.943s)             atirage.cpp:977   INFO| ati-rage@pci_GPU: primary CRT controller enabled:
+(   0.943s)             atirage.cpp:979   INFO| Video mode: extended
+(   0.943s)             atirage.cpp:980   INFO| Video width: 640 pixels
+(   0.943s)             atirage.cpp:981   INFO| Video height: 480 lines
+(   0.943s)             atirage.cpp:982   INFO| Vertical blank: 45 lines
+(   0.943s)             atirage.cpp:808   INFO| Pixel format: 8 bpp with DAC palette
+(   0.943s)             atirage.cpp:984   INFO| VPLL frequency: 120.909072 MHz
+(   0.943s)             atirage.cpp:985   INFO| Pixel (dot) clock: 30.227268 MHz
+(   0.943s)             atirage.cpp:986   INFO| Refresh rate: 66.638603 Hz
+(   0.943s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 1280 x 960   display:  640 x 480   scale: 2.000  err:    0 x 0   
+(   0.943s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 1280 x 960   display:  640 x 480   scale: 2.000
+(   0.943s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 1280 x 960   display:  640 x 480   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(   1.174s)                main.cpp:458   INFO| TS=0000002000000032 PC=0xff812b60 executing b       0xFF809398
+(   1.174s)                main.cpp:465   INFO| CARRY total=125000006 calls=156,0,0,0 taken=0 inputs=0 changes=0
+(   1.191s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffa
+(   1.343s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   1.344s)              mpc106.cpp:87     ERR| Grackle err: read attempt from non-existent PCI device 00:0d.0 @00.l
+(   1.344s)              mpc106.cpp:87     ERR| Grackle err: read attempt from non-existent PCI device 00:0e.0 @00.l
+(   1.345s)              mpc106.cpp:87     ERR| Grackle err: read attempt from non-existent PCI device 00:0f.0 @00.l
+(   1.345s)         memctrlbase.cpp:359   INFO| Added mmio region 0x81000000..0x819FFFFF (ati-rage@pci_GPU)
+(   1.345s)             atirage.cpp:186   INFO| ati-rage@pci_GPU: aperture[0] set to 0x81000000
+(   1.348s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   1.350s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   1.353s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   1.355s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   1.371s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   1.386s)               atahd.cpp:243   INFO| ATA-HD: default transfer mode requested
+(   1.449s)                main.cpp:458   INFO| TS=0000003000000032 PC=0xff80939c executing lwz     r19, 0x0(r30)
+(   1.449s)                main.cpp:465   INFO| CARRY total=187500086 calls=163,0,0,0 taken=0 inputs=0 changes=0
+(   1.512s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   1.712s)                main.cpp:458   INFO| TS=0000004000000032 PC=0x01c10ff4 executing b       0x01C10FC4
+(   1.712s)                main.cpp:465   INFO| CARRY total=250002812 calls=223,0,0,0 taken=0 inputs=0 changes=0
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce85.b = 85
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce86.b = 86
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce87.b = 87
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce88.b = 88
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce89.b = 89
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8a.b = 8a
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8b.b = 8b
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8c.b = 8c
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8d.b = 8d
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8e.b = 8e
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8f.b = 8f
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce90.b = 90
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce91.b = 91
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce92.b = 92
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce93.b = 93
+(   1.848s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce94.b = 94
+(   1.848s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 002fce85.b
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce85.b = 85
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce86.b = 86
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce87.b = 87
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce88.b = 88
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce89.b = 89
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8a.b = 8a
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8b.b = 8b
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8c.b = 8c
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8d.b = 8d
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8e.b = 8e
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce8f.b = 8f
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce90.b = 90
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce91.b = 91
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce92.b = 92
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce93.b = 93
+(   1.850s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 002fce94.b = 94
+(   1.850s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 002fce85.b
+(   1.864s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000  err:    0 x 0   
+(   1.864s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000
+(   1.864s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(   1.864s)             atirage.cpp:916   INFO| ati-rage@pci_GPU: clock_sel:3 fb_div:c6
+(   1.864s)             atirage.cpp:977   INFO| ati-rage@pci_GPU: primary CRT controller enabled:
+(   1.864s)             atirage.cpp:979   INFO| Video mode: extended
+(   1.864s)             atirage.cpp:980   INFO| Video width: 1024 pixels
+(   1.864s)             atirage.cpp:981   INFO| Video height: 768 lines
+(   1.864s)             atirage.cpp:982   INFO| Vertical blank: 32 lines
+(   1.864s)             atirage.cpp:808   INFO| Pixel format: 8 bpp with DAC palette
+(   1.864s)             atirage.cpp:984   INFO| VPLL frequency: 157.499968 MHz
+(   1.864s)             atirage.cpp:985   INFO| Pixel (dot) clock: 78.749984 MHz
+(   1.864s)             atirage.cpp:986   INFO| Refresh rate: 75.028572 Hz
+(   1.864s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000  err:    0 x 0   
+(   1.864s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000
+(   1.864s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(   2.892s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.895s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.898s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.901s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   2.916s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   2.931s)               atahd.cpp:243   INFO| ATA-HD: default transfer mode requested
+(   2.945s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.947s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.950s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.952s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   2.967s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   2.982s)               atahd.cpp:243   INFO| ATA-HD: default transfer mode requested
+(   2.985s)                main.cpp:458   INFO| TS=0000005000000032 PC=0xff80bedc executing addi    r31, r31, 0x4
+(   2.985s)                main.cpp:465   INFO| CARRY total=312505903 calls=279,0,0,0 taken=0 inputs=0 changes=0
+(   2.996s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   2.998s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   3.001s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(   3.003s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   3.018s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(   3.033s)               atahd.cpp:243   INFO| ATA-HD: default transfer mode requested
+(   3.273s)                main.cpp:458   INFO| TS=0000006000000032 PC=0xff847bfc executing bl      0xFF809410
+(   3.273s)                main.cpp:465   INFO| CARRY total=375006526 calls=331,0,0,0 taken=0 inputs=0 changes=0
+(   3.559s)                main.cpp:458   INFO| TS=0000007000000032 PC=0x01c10ee4 executing stb     r0, 0x0(r9)
+(   3.559s)                main.cpp:465   INFO| CARRY total=437506985 calls=331,0,0,0 taken=0 inputs=0 changes=0
+(   3.789s)                main.cpp:458   INFO| TS=0000008000000032 PC=0x01c10ef4 executing stw     r0, 0x20(r30)
+(   3.789s)                main.cpp:465   INFO| CARRY total=500007000 calls=331,0,0,0 taken=0 inputs=0 changes=0
+(   4.033s)                main.cpp:458   INFO| TS=0000009000000032 PC=0x01c10ef0 executing add     r0, r0, r9
+(   4.033s)                main.cpp:465   INFO| CARRY total=562508262 calls=859,0,0,0 taken=0 inputs=0 changes=0
+(   4.276s)                main.cpp:458   INFO| TS=0000010000000032 PC=0x01c10ed0 executing add     r9, r0, r11
+(   4.276s)                main.cpp:465   INFO| CARRY total=625009846 calls=1443,0,0,0 taken=0 inputs=0 changes=0
+(   4.520s)                main.cpp:458   INFO| TS=0000011000000032 PC=0x01c10ea8 executing addi    r9, r30, 0x60
+(   4.520s)                main.cpp:465   INFO| CARRY total=687511396 calls=2021,0,0,0 taken=0 inputs=0 changes=0
+(   4.762s)                main.cpp:458   INFO| TS=0000012000000032 PC=0x01c10ec0 executing bc      4, 2, 0x01C10EC8
+(   4.762s)                main.cpp:465   INFO| CARRY total=750013003 calls=2587,0,0,0 taken=0 inputs=0 changes=0
+(   5.007s)                main.cpp:458   INFO| TS=0000013000000032 PC=0x01c10ed4 executing lwz     r0, 0x18(r30)
+(   5.007s)                main.cpp:465   INFO| CARRY total=812514474 calls=3137,0,0,0 taken=0 inputs=0 changes=0
+(   5.254s)                main.cpp:458   INFO| TS=0000014000000032 PC=0x01c10ed8 executing lwz     r10, 0x20(r30)
+(   5.254s)                main.cpp:465   INFO| CARRY total=875016015 calls=3693,0,0,0 taken=0 inputs=0 changes=0
+(   5.501s)                main.cpp:458   INFO| TS=0000015000000032 PC=0xff80a19c executing or.     r20, r20, r20
+(   5.501s)                main.cpp:465   INFO| CARRY total=937517388 calls=4203,0,0,0 taken=0 inputs=0 changes=0
+(   5.750s)                main.cpp:458   INFO| TS=0000016000000032 PC=0x01c10ef4 executing stw     r0, 0x20(r30)
+(   5.750s)                main.cpp:465   INFO| CARRY total=1000018894 calls=4723,0,0,0 taken=0 inputs=0 changes=0
+(   5.996s)                main.cpp:458   INFO| TS=0000017000000032 PC=0xff80a400 executing stwu    r20, -0x4(r31)
+(   5.996s)                main.cpp:465   INFO| CARRY total=1062520117 calls=5245,0,0,0 taken=0 inputs=0 changes=0
+(   6.242s)                main.cpp:458   INFO| TS=0000018000000032 PC=0x01c10ee4 executing stb     r0, 0x0(r9)
+(   6.242s)                main.cpp:465   INFO| CARRY total=1125021471 calls=5719,0,0,0 taken=0 inputs=0 changes=0
+(   6.493s)                main.cpp:458   INFO| TS=0000019000000032 PC=0x01c12e68 executing cmp     cr0, r9, r0
+(   6.493s)                main.cpp:465   INFO| CARRY total=1187522787 calls=6193,0,0,0 taken=0 inputs=0 changes=0
+(   6.742s)                main.cpp:458   INFO| TS=0000020000000032 PC=0x01c0a9fc executing bc      4, 2, 0x01C0AA4C
+(   6.742s)                main.cpp:465   INFO| CARRY total=1250024174 calls=6717,0,0,0 taken=0 inputs=0 changes=0
+(   6.994s)                main.cpp:458   INFO| TS=0000021000000032 PC=0x01c10ed0 executing add     r9, r0, r11
+(   6.994s)                main.cpp:465   INFO| CARRY total=1312525127 calls=7045,0,0,0 taken=0 inputs=0 changes=0
+(   7.241s)                main.cpp:458   INFO| TS=0000022000000032 PC=0x01c10ef8 executing b       0x01C10EA8
+(   7.241s)                main.cpp:465   INFO| CARRY total=1375026450 calls=7515,0,0,0 taken=0 inputs=0 changes=0
+(   7.487s)                main.cpp:458   INFO| TS=0000023000000032 PC=0xff80a19c executing or.     r20, r20, r20
+(   7.487s)                main.cpp:465   INFO| CARRY total=1437527749 calls=7979,0,0,0 taken=0 inputs=0 changes=0
+(   7.736s)                main.cpp:458   INFO| TS=0000024000000032 PC=0xff809050 executing mtspr   spr9, r19
+(   7.736s)                main.cpp:465   INFO| CARRY total=1500028927 calls=8413,0,0,0 taken=0 inputs=0 changes=0
+(   7.985s)                main.cpp:458   INFO| TS=0000025000000032 PC=0xff8091c4 executing bcctr   20, 0, 0x74636362
+(   7.985s)                main.cpp:465   INFO| CARRY total=1562530193 calls=8867,0,0,0 taken=0 inputs=0 changes=0
+(   8.235s)                main.cpp:458   INFO| TS=0000026000000032 PC=0x01c10eac executing lwz     r11, 0x0(r9)
+(   8.235s)                main.cpp:465   INFO| CARRY total=1625031232 calls=9263,0,0,0 taken=0 inputs=0 changes=0
+(   8.484s)                main.cpp:458   INFO| TS=0000027000000032 PC=0x01c073a0 executing cmpi    cr0, 0, r0, 0x0
+(   8.484s)                main.cpp:465   INFO| CARRY total=1687532098 calls=9653,0,0,0 taken=0 inputs=0 changes=0
+(   8.732s)                main.cpp:458   INFO| TS=0000028000000032 PC=0xff80fc68 executing bclr    20, 0, 0x726C6362
+(   8.732s)                main.cpp:465   INFO| CARRY total=1750033284 calls=10075,0,0,0 taken=0 inputs=0 changes=0
+(   8.980s)                main.cpp:458   INFO| TS=0000029000000032 PC=0x01c10ee4 executing stb     r0, 0x0(r9)
+(   8.980s)                main.cpp:465   INFO| CARRY total=1812534543 calls=10575,0,0,0 taken=0 inputs=0 changes=0
+(   9.226s)                main.cpp:458   INFO| TS=0000030000000032 PC=0x01c10ea8 executing addi    r9, r30, 0x60
+(   9.226s)                main.cpp:465   INFO| CARRY total=1875035710 calls=11071,0,0,0 taken=0 inputs=0 changes=0
+(   9.469s)                main.cpp:458   INFO| TS=0000031000000032 PC=0x01c118ac executing stw     r3, 0x48(r30)
+(   9.469s)                main.cpp:465   INFO| CARRY total=1937536235 calls=11271,0,0,0 taken=0 inputs=0 changes=0
+(   9.720s)                main.cpp:458   INFO| TS=0000032000000032 PC=0x01c10ecc executing lwz     r11, 0x20(r30)
+(   9.720s)                main.cpp:465   INFO| CARRY total=2000036819 calls=11475,0,0,0 taken=0 inputs=0 changes=0
+(   9.977s)                main.cpp:458   INFO| TS=0000033000000032 PC=0x01c10ebc executing cmpi    cr0, 0, r0, 0x0
+(   9.977s)                main.cpp:465   INFO| CARRY total=2062537431 calls=11707,0,0,0 taken=0 inputs=0 changes=0
+(  10.229s)                main.cpp:458   INFO| TS=0000034000000032 PC=0x01c10ed4 executing lwz     r0, 0x18(r30)
+(  10.229s)                main.cpp:465   INFO| CARRY total=2125038390 calls=12109,0,0,0 taken=0 inputs=0 changes=0
+(  10.483s)                main.cpp:458   INFO| TS=0000035000000032 PC=0x01c10ebc executing cmpi    cr0, 0, r0, 0x0
+(  10.483s)                main.cpp:465   INFO| CARRY total=2187539308 calls=12475,0,0,0 taken=0 inputs=0 changes=0
+(  10.738s)                main.cpp:458   INFO| TS=0000036000000032 PC=0x01c10ee8 executing lwz     r0, 0x20(r30)
+(  10.738s)                main.cpp:465   INFO| CARRY total=2250040149 calls=12823,0,0,0 taken=0 inputs=0 changes=0
+(  10.986s)                main.cpp:458   INFO| TS=0000037000000032 PC=0xff80a1a0 executing addi    r3, r18, 0x4
+(  10.986s)                main.cpp:465   INFO| CARRY total=2312541309 calls=13275,0,0,0 taken=0 inputs=0 changes=0
+(  11.245s)                main.cpp:458   INFO| TS=0000038000000032 PC=0x01c10ecc executing lwz     r11, 0x20(r30)
+(  11.245s)                main.cpp:465   INFO| CARRY total=2375042108 calls=13579,0,0,0 taken=0 inputs=0 changes=0
+(  11.504s)                main.cpp:458   INFO| TS=0000039000000032 PC=0xff848e20 executing bl      0xFF848088
+(  11.504s)                main.cpp:465   INFO| CARRY total=2437542948 calls=13937,0,0,0 taken=0 inputs=0 changes=0
+(  11.766s)                main.cpp:458   INFO| TS=0000040000000032 PC=0xff848e38 executing bl      0xFF80A2B0
+(  11.766s)                main.cpp:465   INFO| CARRY total=2500043482 calls=14121,0,0,0 taken=0 inputs=0 changes=0
+(  12.025s)                main.cpp:458   INFO| TS=0000041000000032 PC=0x01c10ebc executing cmpi    cr0, 0, r0, 0x0
+(  12.025s)                main.cpp:465   INFO| CARRY total=2562544092 calls=14327,0,0,0 taken=0 inputs=0 changes=0
+(  12.282s)                main.cpp:458   INFO| TS=0000042000000032 PC=0x01c10ee8 executing lwz     r0, 0x20(r30)
+(  12.282s)                main.cpp:465   INFO| CARRY total=2625044869 calls=14607,0,0,0 taken=0 inputs=0 changes=0
+(  12.537s)                main.cpp:458   INFO| TS=0000043000000032 PC=0x01c10ee4 executing stb     r0, 0x0(r9)
+(  12.537s)                main.cpp:465   INFO| CARRY total=2687545681 calls=14901,0,0,0 taken=0 inputs=0 changes=0
+(  12.792s)                main.cpp:458   INFO| TS=0000044000000032 PC=0xff80a2d8 executing bc      4, 2, 0xFF80A250
+(  12.792s)                main.cpp:465   INFO| CARRY total=2750046639 calls=15313,0,0,0 taken=0 inputs=0 changes=0
+(  13.067s)                main.cpp:458   INFO| TS=0000045000000032 PC=0x01c10ed0 executing add     r9, r0, r11
+(  13.067s)                main.cpp:465   INFO| CARRY total=2812546654 calls=15313,0,0,0 taken=0 inputs=0 changes=0
+(  13.323s)                main.cpp:458   INFO| TS=0000046000000032 PC=0x01c10ea8 executing addi    r9, r30, 0x60
+(  13.323s)                main.cpp:465   INFO| CARRY total=2875048067 calls=15451,0,0,0 taken=0 inputs=0 changes=0
+(  13.574s)                main.cpp:458   INFO| TS=0000047000000032 PC=0x0020bedc executing lwarx   r3, 0, r4
+(  13.574s)                main.cpp:465   INFO| CARRY total=2937549001 calls=18584,52,0,0 taken=95 inputs=886 changes=42
+(  13.825s)                main.cpp:458   INFO| TS=0000048000000032 PC=0x002cb514 executing cmpli   cr0, 0, r0, 0xE
+(  13.825s)                main.cpp:465   INFO| CARRY total=3000049288 calls=22425,55,0,0 taken=2137 inputs=2159 changes=424
+(  14.067s)                main.cpp:458   INFO| TS=0000049000000032 PC=0x002cc190 executing lbzu    r0, 0x1(r10)
+(  14.067s)                main.cpp:465   INFO| CARRY total=3062549371 calls=22979,56,0,0 taken=2186 inputs=2263 changes=445
+(  14.302s)                main.cpp:458   INFO| TS=0000050000000032 PC=0x0007dc8c executing addi    r4, r4, 0x1
+(  14.302s)                main.cpp:465   INFO| CARRY total=3125049582 calls=23331,57,0,0 taken=2203 inputs=2319 changes=463
+(  14.540s)                main.cpp:458   INFO| TS=0000051000000032 PC=0x002c0eec executing cmp     cr0, r0, r4
+(  14.540s)                main.cpp:465   INFO| CARRY total=3187549730 calls=24213,61,0,0 taken=2269 inputs=2470 changes=521
+(  14.774s)                main.cpp:458   INFO| TS=0000052000000032 PC=0x0007dc88 executing extsb   r0, r0
+(  14.774s)                main.cpp:465   INFO| CARRY total=3250049856 calls=25250,64,0,0 taken=2431 inputs=2692 changes=575
+(  15.011s)                main.cpp:458   INFO| TS=0000053000000032 PC=0x0007dcb0 executing bclr    20, 0, 0x726C6362
+(  15.011s)                main.cpp:465   INFO| CARRY total=3312549934 calls=26096,95,0,0 taken=2751 inputs=2784 changes=632
+(  15.253s)                main.cpp:458   INFO| TS=0000054000000032 PC=0x002c0f04 executing addi    r11, r11, 0x1
+(  15.253s)                main.cpp:465   INFO| CARRY total=3375050033 calls=27124,109,0,0 taken=3005 inputs=2985 changes=701
+(  15.490s)                main.cpp:458   INFO| TS=0000055000000032 PC=0x0007dc84 executing addi    r3, r3, 0x1
+(  15.490s)                main.cpp:465   INFO| CARRY total=3437550239 calls=28388,153,0,0 taken=3502 inputs=3136 changes=768
+(  15.733s)                main.cpp:458   INFO| TS=0000056000000032 PC=0x0007dc98 executing bc      4, 2, 0x0007DCAC
+(  15.733s)                main.cpp:465   INFO| CARRY total=3500050405 calls=29283,154,0,0 taken=3733 inputs=3224 changes=825
+(  15.971s)                main.cpp:458   INFO| TS=0000057000000032 PC=0x002c0f10 executing bc      12, 0, 0x002C0EE8
+(  15.971s)                main.cpp:465   INFO| CARRY total=3562550573 calls=30403,157,0,0 taken=4079 inputs=3381 changes=897
+(  16.113s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 01befffb
+(  16.113s)            maciotwo.cpp:400   INFO| mac-io_heathrow: CPU_ID register written with 0xF0
+(  16.113s)            maciotwo.cpp:403   INFO| mac-io_heathrow: MB_ID register written with 0x70
+(  16.113s)            maciotwo.cpp:406   INFO| mac-io_heathrow: MON_ID register written with 0x10
+(  16.113s)            maciotwo.cpp:409   INFO| mac-io_heathrow: FP_ID register written with 0x70
+(  16.207s)                main.cpp:458   INFO| TS=0000058000000032 PC=0x002cc234 executing lwz     r9, 0x1924(r30)
+(  16.207s)                main.cpp:465   INFO| CARRY total=3625050643 calls=30961,160,0,0 taken=4106 inputs=3454 changes=927
+(  16.257s)       atabasedevice.cpp:47    INFO| ATA-HD: soft-reset triggered
+(  16.415s)                main.cpp:458   INFO| TS=0000059000000032 PC=0x001fd2ec executing addi    r5, r5, 0x5
+(  16.415s)                main.cpp:465   INFO| CARRY total=3687550718 calls=31471,167,0,0 taken=4159 inputs=3538 changes=980
+(  16.422s)       atabasedevice.cpp:47    INFO| ATAPI-CDROM: soft-reset triggered
+(  16.450s)             viacuda.cpp:321   INFO| VIA SR interrupt enabled
+(  16.450s)             viacuda.cpp:789   INFO| Cuda: power messages enabled
+(  16.450s)             viacuda.cpp:757   INFO| Cuda: File server flag on
+(  16.501s)             viacuda.cpp:681   INFO| Cuda: autopoll stopped
+(  16.529s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  16.558s)              bigmac.cpp:506   INFO| PHY reset requested
+(  16.565s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = e1befffb
+(  16.568s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  16.655s)                main.cpp:458   INFO| TS=0000060000000032 PC=0x0007dc98 executing bc      4, 2, 0x0007DCAC
+(  16.655s)                main.cpp:465   INFO| CARRY total=3750051083 calls=35071,185,0,0 taken=4320 inputs=3906 changes=1178
+(  16.689s)             viacuda.cpp:766   INFO| Cuda: autopoll rate set to 12 ms
+(  16.698s)             viacuda.cpp:677   INFO| Cuda: autopoll started, rate: 12 ms
+(  16.700s)      hostevents_sdl.cpp:395   INFO| Current keyboard state:
+(  16.700s)      hostevents_sdl.cpp:397   INFO|     Modifiers:
+(  16.700s)      hostevents_sdl.cpp:409   INFO|         (none)
+(  16.700s)      hostevents_sdl.cpp:411   INFO|     Keys and Modifiers:
+(  16.700s)      hostevents_sdl.cpp:442   INFO|         (none)
+(  16.791s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  16.820s)              bigmac.cpp:506   INFO| PHY reset requested
+(  16.826s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = e1befffb
+(  16.830s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  16.843s)              bigmac.cpp:215   INFO| BigMac: transceiver soft reset asserted
+(  16.843s)              bigmac.cpp:239   INFO| BigMac: receiver soft reset asserted
+(  16.900s)                main.cpp:458   INFO| TS=0000061000000032 PC=0x000909f4 executing lwz     r7, 0x24(r7)
+(  16.900s)                main.cpp:465   INFO| CARRY total=3812551295 calls=51549,188,0,0 taken=4383 inputs=16606 changes=1257
+(  17.143s)                main.cpp:458   INFO| TS=0000062000000032 PC=0x0007dc90 executing extsb   r9, r9
+(  17.143s)                main.cpp:465   INFO| CARRY total=3875051514 calls=86809,190,0,0 taken=4395 inputs=29917 changes=1271
+(  17.381s)                main.cpp:458   INFO| TS=0000063000000032 PC=0x002cee6c executing lbz     r0, 0x4(r9)
+(  17.381s)                main.cpp:465   INFO| CARRY total=3937551803 calls=92234,190,0,0 taken=4425 inputs=30137 changes=1325
+(  17.403s)               atahd.cpp:247   INFO| ATA-HD: PIO transfer mode set to 0x2
+(  17.407s)               atahd.cpp:252   INFO| ATA-HD: Multiword DMA mode set to 0x2
+(  17.407s)               atahd.cpp:262   INFO| ATA-HD: read look-ahead enabled
+(  17.407s)               atahd.cpp:238   INFO| ATA-HD: write cache enabled
+(  17.568s)     atapibasedevice.cpp:189   INFO| ATAPI-CDROM: xfer_type=0x0, mode=0x1
+(  17.634s)                main.cpp:458   INFO| TS=0000064000000032 PC=0x000847ac executing or      r28, r3, r3
+(  17.634s)                main.cpp:465   INFO| CARRY total=4000052237 calls=100120,217,0,0 taken=4834 inputs=30892 changes=1655
+(  17.876s)                main.cpp:458   INFO| TS=0000065000000032 PC=0x002cc178 executing srawi   r0, r11, 0xE
+(  17.876s)                main.cpp:465   INFO| CARRY total=4062552589 calls=105949,221,0,0 taken=4910 inputs=31150 changes=1738
+(  18.117s)                main.cpp:458   INFO| TS=0000066000000032 PC=0x0007dc80 executing lbz     r9, 0x0(r4)
+(  18.117s)                main.cpp:465   INFO| CARRY total=4125052870 calls=111527,221,0,0 taken=4937 inputs=31382 changes=1780
+(  18.358s)                main.cpp:458   INFO| TS=0000067000000032 PC=0x0007dcac executing subf    r3, r9, r0
+(  18.358s)                main.cpp:465   INFO| CARRY total=4187553091 calls=114832,221,0,0 taken=4971 inputs=31776 changes=1824
+(  18.597s)                main.cpp:458   INFO| TS=0000068000000032 PC=0x0007dc84 executing addi    r3, r3, 0x1
+(  18.597s)                main.cpp:465   INFO| CARRY total=4250053428 calls=116862,222,0,0 taken=5020 inputs=32076 changes=1901
+(  18.771s)      scsicommoncmds.cpp:318    ERR| MODE_SENSE: page 0x1A not supported
+(  18.771s)       scsicdromcmds.cpp:344   WARN| Page 0x31 requested
+(  18.885s)                main.cpp:458   INFO| TS=0000069000000032 PC=0x00090a08 executing and.    r8, r8, r6
+(  18.885s)                main.cpp:465   INFO| CARRY total=4312556892 calls=128483,411,0,0 taken=6704 inputs=32740 changes=2926
+(  19.293s)                main.cpp:458   INFO| TS=0000070000000032 PC=0x0008ef20 executing stw     r11, 0x1C(r4)
+(  19.293s)                main.cpp:465   INFO| CARRY total=4375076491 calls=161298,4141,0,0 taken=13551 inputs=35016 changes=6491
+(  19.660s)                main.cpp:458   INFO| TS=0000071000000032 PC=0x00071e28 executing mtspr   spr8, r0
+(  19.660s)                main.cpp:465   INFO| CARRY total=4437583504 calls=192514,15857,0,0 taken=23038 inputs=53074 changes=16280
+(  19.990s)                main.cpp:458   INFO| TS=0000072000000032 PC=0x70162350 executing addi    r9, r9, 0x2
+(  19.990s)                main.cpp:465   INFO| CARRY total=4500088415 calls=220602,30010,0,0 taken=35656 inputs=78678 changes=26811
+(  20.316s)                main.cpp:458   INFO| TS=0000073000000032 PC=0x70165f3c executing bc      12, 0, 0x70165EEC
+(  20.316s)                main.cpp:465   INFO| CARRY total=4562592574 calls=248627,43942,0,0 taken=50246 inputs=103001 changes=37148
+(  20.619s)                main.cpp:458   INFO| TS=0000074000000032 PC=0x7016769c executing lwz     r0, 0x18(r11)
+(  20.620s)                main.cpp:465   INFO| CARRY total=4625094613 calls=265678,46381,0,0 taken=56256 inputs=110976 changes=41694
+(  20.905s)                main.cpp:458   INFO| TS=0000075000000032 PC=0x701684ac executing lwz     r0, 0x14(r11)
+(  20.905s)                main.cpp:465   INFO| CARRY total=4687595952 calls=278276,47414,0,0 taken=59933 inputs=119593 changes=45636
+(  21.184s)                main.cpp:458   INFO| TS=0000076000000032 PC=0x00202bfc executing or      r9, r10, r10
+(  21.184s)                main.cpp:465   INFO| CARRY total=4750097052 calls=300090,48215,0,0 taken=67498 inputs=133023 changes=54628
+(  21.438s)                main.cpp:458   INFO| TS=0000077000000032 PC=0x0020226c executing bclr    20, 0, 0x726C6362
+(  21.438s)                main.cpp:465   INFO| CARRY total=4812597279 calls=305410,48215,0,0 taken=70444 inputs=133751 changes=55441
+(  21.717s)                main.cpp:458   INFO| TS=0000078000000032 PC=0x001ff53c executing or      r31, r4, r4
+(  21.717s)                main.cpp:465   INFO| CARRY total=4875097513 calls=310940,48283,0,0 taken=73494 inputs=134751 changes=56600
+(  21.995s)                main.cpp:458   INFO| TS=0000079000000032 PC=0x002049f8 executing cmpl    cr0, 0, r9, r10
+(  21.995s)                main.cpp:465   INFO| CARRY total=4937597730 calls=313787,48357,0,0 taken=74688 inputs=134977 changes=56769
+(  22.264s)                main.cpp:458   INFO| TS=0000080000000032 PC=0x700047f8 executing subf.   r3, r0, r3
+(  22.264s)                main.cpp:465   INFO| CARRY total=5000098476 calls=318726,48636,0,0 taken=76323 inputs=135510 changes=57230
+(  22.526s)                main.cpp:458   INFO| TS=0000081000000032 PC=0x00002408 executing bc      4, 2, 0x0000241C
+(  22.526s)                main.cpp:465   INFO| CARRY total=5062599697 calls=324290,49039,0,0 taken=77246 inputs=136398 changes=58049
+(  22.770s)                main.cpp:458   INFO| TS=0000082000000032 PC=0x0000d7c4 executing bc      4, 2, 0x0000D7E4
+(  22.770s)                main.cpp:465   INFO| CARRY total=5125100295 calls=327893,49061,0,0 taken=77550 inputs=136615 changes=58445
+(  23.026s)                main.cpp:458   INFO| TS=0000083000000032 PC=0x0000241c executing addi    r11, r11, 0x1
+(  23.026s)                main.cpp:465   INFO| CARRY total=5187601470 calls=333748,49415,0,0 taken=78530 inputs=137197 changes=59108
+(  23.326s)                main.cpp:458   INFO| TS=0000084000000032 PC=0x00002404 executing cmp     cr0, r0, r4
+(  23.326s)                main.cpp:465   INFO| CARRY total=5250102581 calls=338376,49594,0,0 taken=78995 inputs=137676 changes=59632
+(  23.608s)                main.cpp:458   INFO| TS=0000085000000032 PC=0x00002120 executing bc      5, 2, 0x00002110
+(  23.608s)                main.cpp:465   INFO| CARRY total=5312603660 calls=342550,49725,0,0 taken=79359 inputs=138093 changes=60106
+(  23.830s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  23.830s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 63befffb
+(  23.838s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 63befffb
+(  23.838s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 63befffb
+(  23.838s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  23.842s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  23.892s)                main.cpp:458   INFO| TS=0000086000000032 PC=0x00002ab0 executing lmw     r26, -0x18(r1)
+(  23.892s)                main.cpp:465   INFO| CARRY total=5375104761 calls=347558,49921,0,0 taken=80203 inputs=138630 changes=60650
+(  24.138s)                main.cpp:458   INFO| TS=0000087000000032 PC=0x0000d818 executing cmpl    cr0, 0, r30, r9
+(  24.138s)                main.cpp:465   INFO| CARRY total=5437605268 calls=349740,49922,0,0 taken=80359 inputs=138824 changes=60938
+(  24.392s)                main.cpp:458   INFO| TS=0000088000000032 PC=0x0000d81c executing bc      12, 0, 0x0000D824
+(  24.392s)                main.cpp:465   INFO| CARRY total=5500106381 calls=354287,50056,0,0 taken=80718 inputs=139237 changes=61409
+(  24.642s)                main.cpp:458   INFO| TS=0000089000000032 PC=0x0000dca0 executing cmpi    cr0, 0, r9, 0x0
+(  24.642s)                main.cpp:465   INFO| CARRY total=5562607489 calls=358564,50222,0,0 taken=81090 inputs=139693 changes=61921
+(  24.906s)                main.cpp:458   INFO| TS=0000090000000032 PC=0x00086124 executing lwarx   r10, 0, r8
+(  24.906s)                main.cpp:465   INFO| CARRY total=5625108590 calls=363273,50522,0,0 taken=82283 inputs=140461 changes=62552
+(  25.159s)                main.cpp:458   INFO| TS=0000091000000032 PC=0x0000d7f4 executing cmpi    cr0, 0, r3, 0x0
+(  25.159s)                main.cpp:465   INFO| CARRY total=5687609276 calls=366462,50532,0,0 taken=82486 inputs=140664 changes=62872
+(  25.409s)                main.cpp:458   INFO| TS=0000092000000032 PC=0x0007288c executing bl      0x00071D4C
+(  25.409s)                main.cpp:465   INFO| CARRY total=5750110483 calls=371299,50738,0,0 taken=82917 inputs=141192 changes=63446
+(  25.668s)                main.cpp:458   INFO| TS=0000093000000032 PC=0x701ecdd8 executing bcl     20, 31, 0x701ECDDC
+(  25.668s)                main.cpp:465   INFO| CARRY total=5812611348 calls=374804,50986,0,0 taken=83471 inputs=141807 changes=63943
+(  25.919s)                main.cpp:458   INFO| TS=0000094000000032 PC=0x0000d770 executing lbzu    r0, 0x1(r10)
+(  25.919s)                main.cpp:465   INFO| CARRY total=5875112323 calls=378555,51063,0,0 taken=83743 inputs=142177 changes=64376
+(  26.205s)                main.cpp:458   INFO| TS=0000095000000032 PC=0x000024b0 executing crandc  crb0, crb0, crb1
+(  26.205s)                main.cpp:465   INFO| CARRY total=5937614703 calls=387193,52118,0,0 taken=86215 inputs=143051 changes=65442
+(  26.587s)                main.cpp:458   INFO| TS=0000096000000032 PC=0x000720f4 executing stwu    r1, -0x60(r1)
+(  26.587s)                main.cpp:465   INFO| CARRY total=6000127939 calls=442382,55917,0,0 taken=97873 inputs=146770 changes=69338
+(  26.987s)                main.cpp:458   INFO| TS=0000097000000032 PC=0x70492e38 executing addi    r4, r0, 0x0
+(  26.987s)                main.cpp:465   INFO| CARRY total=6062642942 calls=469896,60602,0,0 taken=106682 inputs=153884 changes=71954
+(  27.397s)                main.cpp:458   INFO| TS=0000098000000032 PC=0x0017b2a8 executing cmpli   cr0, 0, r11, 0xFF
+(  27.397s)                main.cpp:465   INFO| CARRY total=6125160247 calls=499034,65376,0,0 taken=113497 inputs=158703 changes=75379
+(  27.719s)                main.cpp:458   INFO| TS=0000099000000032 PC=0x4110f16c executing lwzx    r10, r7, r0
+(  27.719s)                main.cpp:465   INFO| CARRY total=6187665787 calls=512460,68471,0,0 taken=116870 inputs=163786 changes=77794
+(  27.993s)                main.cpp:458   INFO| TS=0000100000000032 PC=0x0002e47c executing addi    r9, r0, 0x0
+(  27.993s)                main.cpp:465   INFO| CARRY total=6250168388 calls=521153,69423,0,0 taken=118655 inputs=166554 changes=79196
+(  28.333s)                main.cpp:458   INFO| TS=0000101000000032 PC=0x000020e8 executing rlwinm  r6, r7, 27, 22, 22
+(  28.333s)                main.cpp:465   INFO| CARRY total=6312678634 calls=539347,75556,0,0 taken=128319 inputs=174709 changes=83648
+(  28.541s)                main.cpp:458   INFO| TS=0000102000000016 PC=0x00090af4 executing mtmsr   r5
+(  28.541s)                main.cpp:465   INFO| CARRY total=6344778873 calls=555192,78709,0,0 taken=133715 inputs=177313 changes=86196
+(  28.549s)                main.cpp:458   INFO| TS=0000103000000016 PC=0x00090af4 executing mtmsr   r5
+(  28.549s)                main.cpp:465   INFO| CARRY total=6346138739 calls=556478,78709,0,0 taken=133856 inputs=177316 changes=86469
+(  28.556s)                main.cpp:458   INFO| TS=0000104000000016 PC=0x00090af4 executing mtmsr   r5
+(  28.556s)                main.cpp:465   INFO| CARRY total=6347492110 calls=557757,78709,0,0 taken=133993 inputs=177319 changes=86735
+(  28.564s)                main.cpp:458   INFO| TS=0000105000000016 PC=0x00090af4 executing mtmsr   r5
+(  28.564s)                main.cpp:465   INFO| CARRY total=6348845953 calls=559038,78709,0,0 taken=134130 inputs=177323 changes=87002
+(  28.798s)                main.cpp:458   INFO| TS=0000106000000032 PC=0x0016d53c executing or      r3, r31, r31
+(  28.798s)                main.cpp:465   INFO| CARRY total=6386375494 calls=578556,87194,0,0 taken=141075 inputs=187692 changes=92905
+(  29.151s)                main.cpp:458   INFO| TS=0000107000000032 PC=0x70165f2c executing addi    r29, r29, 0x1
+(  29.151s)                main.cpp:465   INFO| CARRY total=6448880723 calls=606360,103363,0,0 taken=153874 inputs=217241 changes=104576
+(  29.473s)                main.cpp:458   INFO| TS=0000108000000032 PC=0x701cefe0 executing mtspr   spr9, r0
+(  29.473s)                main.cpp:465   INFO| CARRY total=6511384622 calls=632850,116842,0,0 taken=168552 inputs=240659 changes=113985
+(  29.759s)                main.cpp:458   INFO| TS=0000109000000032 PC=0x0009aa58 executing stwu    r1, -0x40(r1)
+(  29.759s)                main.cpp:465   INFO| CARRY total=6573887377 calls=644164,123613,0,0 taken=172285 inputs=251716 changes=118194
+(  30.091s)                main.cpp:458   INFO| TS=0000110000000032 PC=0x70162c20 executing or      r3, r4, r4
+(  30.091s)                main.cpp:465   INFO| CARRY total=6636393250 calls=669285,145026,0,0 taken=184944 inputs=282771 changes=130187
+(  30.419s)                main.cpp:458   INFO| TS=0000111000000032 PC=0x000a30f8 executing lwz     r0, 0x10(r9)
+(  30.419s)                main.cpp:465   INFO| CARRY total=6698897425 calls=695519,158077,0,0 taken=199310 inputs=305797 changes=139029
+(  30.726s)                main.cpp:458   INFO| TS=0000112000000032 PC=0x700047f8 executing subf.   r3, r0, r3
+(  30.726s)                main.cpp:465   INFO| CARRY total=6761401181 calls=714693,168519,0,0 taken=207643 inputs=324448 changes=147106
+(  31.077s)                main.cpp:458   INFO| TS=0000113000000032 PC=0x000414f4 executing mfspr   pr31, spr8
+(  31.077s)                main.cpp:465   INFO| CARRY total=6823914523 calls=733618,177838,0,0 taken=214020 inputs=332237 changes=149794
+(  31.462s)                main.cpp:458   INFO| TS=0000114000000032 PC=0x0016c734 executing addi    r6, r0, 0x0
+(  31.462s)                main.cpp:465   INFO| CARRY total=6886429015 calls=764167,181993,0,0 taken=221419 inputs=335691 changes=153402
+(  31.852s)                main.cpp:458   INFO| TS=0000115000000032 PC=0x000860f8 executing mtmsr   r0
+(  31.852s)                main.cpp:465   INFO| CARRY total=6948943010 calls=800641,184646,0,0 taken=228315 inputs=338677 changes=157732
+(  32.249s)                main.cpp:458   INFO| TS=0000116000000032 PC=0x0008da70 executing addic   r4, r4, -0x20
+(  32.250s)                main.cpp:465   INFO| CARRY total=7011463453 calls=829442,190653,0,0 taken=238573 inputs=341833 changes=161610
+(  32.644s)                main.cpp:458   INFO| TS=0000117000000032 PC=0x0006c930 executing cmp     cr0, r31, r0
+(  32.644s)                main.cpp:465   INFO| CARRY total=7073985665 calls=865154,197043,0,0 taken=252455 inputs=344711 changes=165287
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffe.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffd.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffc.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffb.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffa.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff9.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff8.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff7.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff6.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff5.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff4.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff3.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff2.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff1.b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 01
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 02
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 03
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 04
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 05
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 06
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 07
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 08
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 09
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 0a
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 0b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 0c
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 0d
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 0e
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 0f
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 00
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffe.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffd.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffc.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffb.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffa.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff9.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff8.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff7.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff6.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff5.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff4.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff3.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff2.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff1.b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 01
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 02
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 03
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 04
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 05
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 06
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 07
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 08
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 09
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 0a
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 0b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 0c
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 0d
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 0e
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 0f
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.932s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 00
+(  32.932s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 00
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffe.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffd.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffc.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffb.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdffa.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff9.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff8.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff7.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff6.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff5.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff4.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff3.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff2.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdff1.b
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 01
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 02
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 03
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 04
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 05
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 06
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 07
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 08
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 09
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 0a
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 0b
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 0c
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 0d
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 0e
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 0f
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fe000.b
+(  32.933s)             atirage.cpp:713   WARN| ati-rage@pci_GPU: read  unmapped aperture[0] region 003fdfff.b
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fe000.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdfff.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffe.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffd.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffc.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffb.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdffa.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff9.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff8.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff7.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff6.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff5.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff4.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff3.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff2.b = 00
+(  32.933s)             atirage.cpp:767   WARN| ati-rage@pci_GPU: write unmapped aperture[0] region 003fdff1.b = 00
+(  32.962s)             atirage.cpp:916   INFO| ati-rage@pci_GPU: clock_sel:3 fb_div:c6
+(  32.962s)             atirage.cpp:977   INFO| ati-rage@pci_GPU: primary CRT controller enabled:
+(  32.962s)             atirage.cpp:979   INFO| Video mode: extended
+(  32.962s)             atirage.cpp:980   INFO| Video width: 1024 pixels
+(  32.962s)             atirage.cpp:981   INFO| Video height: 768 lines
+(  32.962s)             atirage.cpp:982   INFO| Vertical blank: 32 lines
+(  32.962s)             atirage.cpp:808   INFO| Pixel format: 8 bpp with DAC palette
+(  32.962s)             atirage.cpp:984   INFO| VPLL frequency: 171.818160 MHz
+(  32.962s)             atirage.cpp:985   INFO| Pixel (dot) clock: 85.909080 MHz
+(  32.962s)             atirage.cpp:986   INFO| Refresh rate: 81.849350 Hz
+(  32.963s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000  err:    0 x 0   
+(  32.963s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000
+(  32.963s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 2048 x 1536  display: 1024 x 768   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(  32.963s)         memctrlbase.cpp:359   INFO| Added mmio region 0x81FFF000..0x81FFFFFF (ati-rage@pci_GPU)
+(  32.963s)             atirage.cpp:186   INFO| ati-rage@pci_GPU: aperture[2] set to 0x81FFF000
+(  32.963s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  32.984s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  32.985s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.009s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.017s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 1664 x 1248  display:  832 x 624   scale: 2.000  err:    0 x 0   
+(  33.017s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 1664 x 1248  display:  832 x 624   scale: 2.000
+(  33.017s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 1664 x 1248  display:  832 x 624   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(  33.017s)             atirage.cpp:916   INFO| ati-rage@pci_GPU: clock_sel:0 fb_div:c6
+(  33.017s)             atirage.cpp:977   INFO| ati-rage@pci_GPU: primary CRT controller enabled:
+(  33.017s)             atirage.cpp:979   INFO| Video mode: extended
+(  33.017s)             atirage.cpp:980   INFO| Video width: 832 pixels
+(  33.017s)             atirage.cpp:981   INFO| Video height: 624 lines
+(  33.017s)             atirage.cpp:982   INFO| Vertical blank: 43 lines
+(  33.017s)             atirage.cpp:808   INFO| Pixel format: 8 bpp with DAC palette
+(  33.017s)             atirage.cpp:984   INFO| VPLL frequency: 171.818160 MHz
+(  33.017s)             atirage.cpp:985   INFO| Pixel (dot) clock: 57.272720 MHz
+(  33.017s)             atirage.cpp:986   INFO| Refresh rate: 74.536583 Hz
+(  33.017s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 1664 x 1248  display:  832 x 624   scale: 2.000  err:    0 x 0   
+(  33.017s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 1664 x 1248  display:  832 x 624   scale: 2.000
+(  33.017s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 1664 x 1248  display:  832 x 624   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(  33.025s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.026s)                main.cpp:458   INFO| TS=0000118000000032 PC=0x0009371c executing mftb    r11, 268
+(  33.026s)                main.cpp:465   INFO| CARRY total=7136495471 calls=896510,200461,0,0 taken=264718 inputs=347586 changes=168952
+(  33.043s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.043s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.059s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.060s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.076s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.076s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.092s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.096s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.112s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.112s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.129s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.129s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.145s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.145s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.162s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.162s)            maciotwo.cpp:423   WARN| mac-io_heathrow: write @33.b = 92000000
+(  33.162s)            maciotwo.cpp:423   WARN| mac-io_heathrow: write @32.b = ff0000
+(  33.197s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.214s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.232s)             atirage.cpp:916   INFO| ati-rage@pci_GPU: clock_sel:0 fb_div:c6
+(  33.232s)             atirage.cpp:977   INFO| ati-rage@pci_GPU: primary CRT controller enabled:
+(  33.232s)             atirage.cpp:979   INFO| Video mode: extended
+(  33.232s)             atirage.cpp:980   INFO| Video width: 832 pixels
+(  33.232s)             atirage.cpp:981   INFO| Video height: 624 lines
+(  33.232s)             atirage.cpp:982   INFO| Vertical blank: 43 lines
+(  33.232s)             atirage.cpp:812   INFO| Pixel format: 15 bpp direct color (RGB555)
+(  33.232s)             atirage.cpp:984   INFO| VPLL frequency: 171.818160 MHz
+(  33.232s)             atirage.cpp:985   INFO| Pixel (dot) clock: 57.272720 MHz
+(  33.232s)             atirage.cpp:986   INFO| Refresh rate: 74.536583 Hz
+(  33.232s)         display_sdl.cpp:172   INFO| update_window_size try drawable: 1664 x 1248  display:  832 x 624   scale: 2.000  err:    0 x 0   
+(  33.232s)         display_sdl.cpp:181   INFO| update_window_size     drawable: 1664 x 1248  display:  832 x 624   scale: 2.000
+(  33.232s)         display_sdl.cpp:267   INFO| configure_dest         drawable: 1664 x 1248  display:  832 x 624   scale: 2.000 (int: 2.000  full: 2.000  nobars: 2.000)  mode: not_full_screen  forward: full_screen_int  reverse: full_screen_no_bars
+(  33.242s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.259s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.259s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffa
+(  33.275s)            maciotwo.cpp:413   WARN| mac-io_heathrow: write FEAT_CTRL @38.l = 61befffb
+(  33.283s)                main.cpp:458   INFO| TS=0000119000000032 PC=0x700043cc executing lwz     r0, 0x0(r26)
+(  33.283s)                main.cpp:465   INFO| CARRY total=7197837836 calls=901405,201853,0,0 taken=266708 inputs=349592 changes=169792
+(  33.670s)                main.cpp:458   INFO| TS=0000120000000032 PC=0x000883e0 executing mfspr   pr6, spr272
+(  33.670s)                main.cpp:465   INFO| CARRY total=7260343308 calls=926703,208311,0,0 taken=275692 inputs=357369 changes=174368
+(  34.044s)                main.cpp:458   INFO| TS=0000121000000032 PC=0x70492514 executing cmpi    cr0, 0, r10, 0x1E
+(  34.044s)                main.cpp:465   INFO| CARRY total=7322849199 calls=964747,215663,0,0 taken=290264 inputs=369131 changes=180770
+(  34.415s)                main.cpp:458   INFO| TS=0000122000000032 PC=0x70003324 executing mtspr   spr8, r0
+(  34.415s)                main.cpp:465   INFO| CARRY total=7385353849 calls=988774,227006,0,0 taken=303204 inputs=382651 changes=188538
+(  34.774s)                main.cpp:458   INFO| TS=0000123000000032 PC=0x000825e8 executing bc      12, 2, 0x000825F4
+(  34.774s)                main.cpp:465   INFO| CARRY total=7447861672 calls=1009208,231913,0,0 taken=308583 inputs=390077 changes=193532
+(  35.123s)                main.cpp:458   INFO| TS=0000124000000032 PC=0x70002a4c executing lwz     r28, -0x2670(r9)
+(  35.123s)                main.cpp:465   INFO| CARRY total=7510367240 calls=1028369,235931,0,0 taken=313729 inputs=396548 changes=198094
+(  35.463s)                main.cpp:458   INFO| TS=0000125000000032 PC=0x0016d71c executing lwz     r4, 0x8(r3)
+(  35.463s)                main.cpp:465   INFO| CARRY total=7572876375 calls=1043216,240253,0,0 taken=318524 inputs=401359 changes=201334
+(  35.867s)                main.cpp:458   INFO| TS=0000126000000032 PC=0x00184c68 executing lwz     r9, 0x28(r31)
+(  35.867s)                main.cpp:465   INFO| CARRY total=7635385116 calls=1112189,249964,0,0 taken=374159 inputs=411111 changes=210327
+(  36.290s)                main.cpp:458   INFO| TS=0000127000000032 PC=0x0008dd44 executing dcbz    0, r4
+(  36.290s)                main.cpp:465   INFO| CARRY total=7697896425 calls=1165524,258885,0,0 taken=411882 inputs=421372 changes=220846
+(  36.645s)                main.cpp:458   INFO| TS=0000128000000032 PC=0x000927f0 executing stw     r0, 0x8(r1)
+(  36.645s)                main.cpp:465   INFO| CARRY total=7760401513 calls=1197555,273912,0,0 taken=432138 inputs=440484 changes=232433
+(  37.003s)                main.cpp:458   INFO| TS=0000129000000032 PC=0x70242ee8 executing b       0x70242EF0
+(  37.003s)                main.cpp:465   INFO| CARRY total=7822907468 calls=1218141,281346,0,0 taken=439005 inputs=449715 changes=238253
+(  37.245s)                main.cpp:458   INFO| TS=0000130000000032 PC=0x764eac98 executing sraw    r10, r9, r25
+(  37.245s)                main.cpp:465   INFO| CARRY total=7885408980 calls=1230219,281735,0,0 taken=439618 inputs=450321 changes=238957
+(  37.464s)                main.cpp:458   INFO| TS=0000131000000032 PC=0x734e7178 executing lbz     r9, 0x1(r16)
+(  37.464s)                main.cpp:465   INFO| CARRY total=7947909409 calls=1237911,281735,0,0 taken=439885 inputs=450478 changes=239356
+(  37.699s)                main.cpp:458   INFO| TS=0000132000000032 PC=0x0008838c executing addis   r0, r0, -0x8000
+(  37.699s)                main.cpp:465   INFO| CARRY total=8010410444 calls=1243341,281856,0,0 taken=440353 inputs=450895 changes=239848
+(  38.043s)                main.cpp:458   INFO| TS=0000133000000032 PC=0x72891224 executing lwz     r9, 0x0(r27)
+(  38.043s)                main.cpp:465   INFO| CARRY total=8072914870 calls=1263868,285790,0,0 taken=445133 inputs=456117 changes=243850
+(  38.402s)                main.cpp:458   INFO| TS=0000134000000032 PC=0x0000230c executing mtcrf   0x04, r7
+(  38.402s)                main.cpp:465   INFO| CARRY total=8135420940 calls=1288085,289544,0,0 taken=454532 inputs=461882 changes=247198
+(  38.764s)                main.cpp:458   INFO| TS=0000135000000032 PC=0x70008c94 executing addi    r4, r4, 0x1
+(  38.764s)                main.cpp:465   INFO| CARRY total=8197931318 calls=1320487,298558,0,0 taken=475060 inputs=471983 changes=251774
+(  39.114s)                main.cpp:458   INFO| TS=0000136000000032 PC=0x0008ef04 executing stw     r11, 0xC(r4)
+(  39.114s)                main.cpp:465   INFO| CARRY total=8260437342 calls=1342946,303792,0,0 taken=485087 inputs=480844 changes=256023
+(  39.466s)                main.cpp:458   INFO| TS=0000137000000032 PC=0x4110104c executing bclr    20, 0, 0x726C6362
+(  39.466s)                main.cpp:465   INFO| CARRY total=8322944491 calls=1361169,308881,0,0 taken=490584 inputs=487666 changes=260150
+(  39.829s)                main.cpp:458   INFO| TS=0000138000000032 PC=0x701da5f4 executing bc      4, 2, 0x701DA5FC
+(  39.829s)                main.cpp:465   INFO| CARRY total=8385450068 calls=1376014,315933,0,0 taken=498168 inputs=497721 changes=266831
+(  40.116s)                main.cpp:458   INFO| TS=0000139000000032 PC=0x4110f9a4 executing addi    r10, r10, 0x1
+(  40.116s)                main.cpp:465   INFO| CARRY total=8447953584 calls=1386837,319065,0,0 taken=502711 inputs=503194 changes=270362
+(  40.428s)                main.cpp:458   INFO| TS=0000140000000032 PC=0x4110f984 executing lwzx    r0, r30, r0
+(  40.428s)                main.cpp:465   INFO| CARRY total=8510459827 calls=1396553,320819,0,0 taken=504976 inputs=506841 changes=272724
+(  40.760s)                main.cpp:458   INFO| TS=0000141000000032 PC=0x701676b0 executing or      r3, r29, r29
+(  40.760s)                main.cpp:465   INFO| CARRY total=8572964746 calls=1408220,329070,0,0 taken=512634 inputs=514539 changes=279289
+(  41.118s)                main.cpp:458   INFO| TS=0000142000000032 PC=0x70003470 executing bc      12, 2, 0x700034B8
+(  41.118s)                main.cpp:465   INFO| CARRY total=8635471435 calls=1424784,355186,0,0 taken=529419 inputs=536524 changes=294788
+(  41.498s)                main.cpp:458   INFO| TS=0000143000000032 PC=0x7016af30 executing lwz     r0, 0x78(r1)
+(  41.498s)                main.cpp:465   INFO| CARRY total=8697977757 calls=1442701,381856,0,0 taken=546050 inputs=559545 changes=310951
+(  41.791s)                main.cpp:458   INFO| TS=0000144000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.791s)                main.cpp:465   INFO| CARRY total=8746855181 calls=1457040,396006,0,0 taken=555456 inputs=574003 changes=318860
+(  41.799s)                main.cpp:458   INFO| TS=0000145000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.799s)                main.cpp:465   INFO| CARRY total=8748346411 calls=1458425,396006,0,0 taken=555601 inputs=574006 changes=319141
+(  41.809s)                main.cpp:458   INFO| TS=0000146000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.809s)                main.cpp:465   INFO| CARRY total=8749863444 calls=1459820,396010,0,0 taken=555752 inputs=574015 changes=319424
+(  41.818s)                main.cpp:458   INFO| TS=0000147000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.818s)                main.cpp:465   INFO| CARRY total=8751559294 calls=1461358,396010,0,0 taken=555895 inputs=574019 changes=319701
+(  41.828s)                main.cpp:458   INFO| TS=0000148000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.828s)                main.cpp:465   INFO| CARRY total=8753088774 calls=1462766,396010,0,0 taken=556048 inputs=574026 changes=319991
+(  41.837s)                main.cpp:458   INFO| TS=0000149000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.837s)                main.cpp:465   INFO| CARRY total=8754593294 calls=1464160,396010,0,0 taken=556192 inputs=574031 changes=320274
+(  41.846s)                main.cpp:458   INFO| TS=0000150000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.846s)                main.cpp:465   INFO| CARRY total=8756067657 calls=1465525,396010,0,0 taken=556333 inputs=574034 changes=320548
+(  41.855s)                main.cpp:458   INFO| TS=0000151000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.855s)                main.cpp:465   INFO| CARRY total=8757570959 calls=1466908,396014,0,0 taken=556481 inputs=574043 changes=320822
+(  41.894s)                main.cpp:458   INFO| TS=0000152000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.894s)                main.cpp:465   INFO| CARRY total=8764051214 calls=1472730,396256,0,0 taken=557943 inputs=575191 changes=322417
+(  41.903s)                main.cpp:458   INFO| TS=0000153000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.903s)                main.cpp:465   INFO| CARRY total=8765523857 calls=1474095,396256,0,0 taken=558081 inputs=575195 changes=322686
+(  41.912s)                main.cpp:458   INFO| TS=0000154000000016 PC=0x00090af4 executing mtmsr   r5
+(  41.912s)                main.cpp:465   INFO| CARRY total=8767003392 calls=1475468,396256,0,0 taken=558223 inputs=575198 changes=322962
+(  41.921s)                main.cpp:458   INFO| TS=0000155000000032 PC=0x000909c4 executing lwz     r4, 0x60(r7)
+(  41.921s)                main.cpp:465   INFO| CARRY total=8768487002 calls=1476848,396256,0,0 taken=558365 inputs=575201 changes=323238
+(  42.225s)                main.cpp:458   INFO| TS=0000156000000032 PC=0x00002108 executing stw     r6, 0x3C(r13)
+(  42.225s)                main.cpp:465   INFO| CARRY total=8821059418 calls=1487795,397650,0,0 taken=560191 inputs=581666 changes=326202
+(  42.404s)                main.cpp:458   INFO| TS=0000157000000016 PC=0x00090af4 executing mtmsr   r5
+(  42.404s)                main.cpp:465   INFO| CARRY total=8849727712 calls=1497067,398583,0,0 taken=562252 inputs=585296 changes=328886
+(  42.413s)                main.cpp:458   INFO| TS=0000158000000016 PC=0x00090af4 executing mtmsr   r5
+(  42.413s)                main.cpp:465   INFO| CARRY total=8851228516 calls=1498447,398583,0,0 taken=562395 inputs=585299 changes=329163
+(  42.423s)                main.cpp:458   INFO| TS=0000159000000016 PC=0x00090af4 executing mtmsr   r5
+(  42.423s)                main.cpp:465   INFO| CARRY total=8852772732 calls=1499859,398583,0,0 taken=562562 inputs=585303 changes=329448
+(  42.440s)                main.cpp:458   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5
+(  42.440s)                main.cpp:465   INFO| CARRY total=8855588185 calls=1501544,399392,0,0 taken=563034 inputs=586062 changes=330196

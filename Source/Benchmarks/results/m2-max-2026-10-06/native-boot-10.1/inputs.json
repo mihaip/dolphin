@@ -1,0 +1,46 @@
+{
+  "rom": {
+    "path": "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+    "bytes": 4194304,
+    "sha256": "6e389f7f2621d0a8e0302a68946cb49eef4fe17a650a0b5da1c0314e53b5c55c"
+  },
+  "nvram": {
+    "path": "/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/video-write-probe/seeds/osx/nvram.bin",
+    "bytes": 8209,
+    "sha256": "57726d7356050b8cf8224ae3ddc6453eb7f3974b26d026d8906a25d1bb0a67d8"
+  },
+  "pram": {
+    "path": "/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/video-write-probe/seeds/osx/pram.bin",
+    "bytes": 273,
+    "sha256": "9a5497e53f70d4e5ca8307855c1ab709b255889d6c31603d9d098a42cb10026f"
+  },
+  "baseline": {
+    "path": "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+    "bytes": 2579424,
+    "sha256": "b6d5bdae11cd0ff46e1f8ee7072ce31414894acbd46801439dab0af3355a37d3"
+  },
+  "candidate": {
+    "path": "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+    "bytes": 2579424,
+    "sha256": "7bb77ad3e6b9051eae724d6fdd6d4f6989be1430c156fdf217436c6f888292e3"
+  },
+  "profile": {
+    "path": "/tmp/dppc-carry-10.1/profile.app/Contents/MacOS/dingusppc",
+    "bytes": 2579792,
+    "sha256": "3bf12a5919d066c19548645545642d3b9d7f55f898fe68c893f69f68c2d34598"
+  },
+  "disk": {
+    "path": "/Users/mihai/Developer/Retro/QEMU/disk-10.1.hda",
+    "bytes": 4294967296,
+    "sha256": "4c979c1db69ac0cbca2157ad361a0d055869aef26e323a9361d22c62495afe14"
+  },
+  "dingusppc_commit": "1baa8eb10ccf516b31403062afa9b63028a13f71",
+  "compiler": "Apple clang 17.0.0 (clang-1700.6.4.2), Xcode 26.3",
+  "configuration": "Release arm64 -O3 -DNDEBUG, no LTO, no sanitizers",
+  "host": "Apple M2 Max, 64 GB RAM",
+  "guest_system_version": {
+    "ProductBuildVersion": "5S60b",
+    "ProductName": "Mac OS X",
+    "ProductVersion": "10.1.5"
+  }
+}

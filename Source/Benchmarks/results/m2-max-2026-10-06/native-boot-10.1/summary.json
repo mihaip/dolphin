@@ -1,0 +1,397 @@
+{
+  "pairs": [
+    {
+      "pair": 1,
+      "baseline_seconds": 41.724,
+      "candidate_seconds": 41.633,
+      "saved_seconds": 0.09099999999999397,
+      "saved_percent": 0.21809989454509152
+    },
+    {
+      "pair": 2,
+      "baseline_seconds": 41.794,
+      "candidate_seconds": 41.599,
+      "saved_seconds": 0.19500000000000028,
+      "saved_percent": 0.46657414939943603
+    },
+    {
+      "pair": 3,
+      "baseline_seconds": 41.632,
+      "candidate_seconds": 41.777,
+      "saved_seconds": -0.14500000000000313,
+      "saved_percent": -0.34828977709455017
+    },
+    {
+      "pair": 4,
+      "baseline_seconds": 41.64,
+      "candidate_seconds": 42.19,
+      "saved_seconds": -0.5499999999999972,
+      "saved_percent": -1.3208453410182448
+    },
+    {
+      "pair": 5,
+      "baseline_seconds": 41.419,
+      "candidate_seconds": 41.456,
+      "saved_seconds": -0.03700000000000614,
+      "saved_percent": -0.08933098336513712
+    },
+    {
+      "pair": 6,
+      "baseline_seconds": 41.375,
+      "candidate_seconds": 41.409,
+      "saved_seconds": -0.03399999999999892,
+      "saved_percent": -0.0821752265861001
+    }
+  ],
+  "all_guest_traces_equal": true,
+  "runs": [
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-01",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 18159,
+      "host_seconds": 41.724,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.724s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-01",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-02",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 20823,
+      "host_seconds": 41.794,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.794s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-02",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-03",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 22387,
+      "host_seconds": 41.632,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.632s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-03",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-04",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 27074,
+      "host_seconds": 41.64,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.640s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-04",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-05",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 28629,
+      "host_seconds": 41.419,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.419s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-05",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "baseline",
+      "command": [
+        "/tmp/dppc-carry-10.1/baseline.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/baseline-06",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 32874,
+      "host_seconds": 41.375,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.375s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "baseline-06",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-01",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 19029,
+      "host_seconds": 41.633,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.633s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-01",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-02",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 19883,
+      "host_seconds": 41.599,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.599s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-02",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-03",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 23578,
+      "host_seconds": 41.777,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.777s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-03",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-04",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 25359,
+      "host_seconds": 42.19,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  42.190s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-04",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-05",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 29909,
+      "host_seconds": 41.456,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.456s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-05",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "/tmp/dppc-carry-10.1/candidate.app/Contents/MacOS/dingusppc",
+        "--deterministic",
+        "--mon_id=Multiscan17in",
+        "--log-to-stderr",
+        "-b",
+        "/Users/mihai/Developer/Retro/ROMs/4MB ROMs/1997-11 - 78F57389 - Power Mac G3 (v3).ROM",
+        "--hdd_img",
+        "disk.hda",
+        "--rambank1_size=128"
+      ],
+      "cwd": "/tmp/dppc-carry-10.1/candidate-06",
+      "endpoint_ns": 160000000000,
+      "termination": "SIGTERM after endpoint, intentional",
+      "pid": 31319,
+      "host_seconds": 41.409,
+      "guest_ns": 160000000016,
+      "pc": "0x00090af4",
+      "marker": "(  41.409s)                main.cpp:457   INFO| TS=0000160000000016 PC=0x00090af4 executing mtmsr   r5",
+      "returncode": -15,
+      "name": "candidate-06",
+      "trace_sha256": "136d1189028ecec3ad49a198b2aaaf2e5b92e8d8c296faddc1670c9c6c91cc3b",
+      "trace_samples": 160
+    }
+  ],
+  "baseline": {
+    "mean_seconds": 41.59733333333333,
+    "median_seconds": 41.635999999999996,
+    "stdev_seconds": 0.16672092450159473
+  },
+  "candidate": {
+    "mean_seconds": 41.67733333333334,
+    "median_seconds": 41.616,
+    "stdev_seconds": 0.2834972075112313
+  },
+  "paired_mean_saved_seconds": -0.08000000000000185,
+  "paired_median_saved_seconds": -0.03550000000000253,
+  "paired_95_percent_ci_seconds": [
+    -0.35121607855187664,
+    0.19121607855187295
+  ],
+  "profile": {
+    "guest_instructions": 8855588185,
+    "adde_variants": [
+      1501544,
+      399392,
+      0,
+      0
+    ],
+    "adde_total": 1900936,
+    "adde_percent": 0.021465948509438282,
+    "carry_output_true": 563034,
+    "carry_input_true": 586062,
+    "carry_output_transitions": 330196,
+    "checksum_extrapolated_saved_seconds": 0.005023139842773438
+  },
+  "framebuffers_equal": true,
+  "framebuffer_sha256": [
+    "4a3417e6a811720a7ac432d30a5a3c8a4e5bbef6a3f14a08d87bd069f3bd5bc7",
+    "4a3417e6a811720a7ac432d30a5a3c8a4e5bbef6a3f14a08d87bd069f3bd5bc7"
+  ]
+}
