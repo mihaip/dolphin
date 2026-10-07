@@ -1,0 +1,43 @@
+(lldb) target create "/tmp/dolphin-slower-analysis/carry64"
+Current executable set to '/tmp/dolphin-slower-analysis/carry64' (arm64).
+(lldb) disassemble -n "Interpreter::addex(Interpreter&, UGeckoInstruction)"
+carry64`Interpreter::addex:
+carry64[0x1000748fc] <+0>:   ldr    x8, [x0, #0x10]
+carry64[0x100074900] <+4>:   ldrb   w12, [x8, #0x2f4]
+carry64[0x100074904] <+8>:   add    x13, x8, #0x20
+carry64[0x100074908] <+12>:  ubfx   x9, x1, #16, #5
+carry64[0x10007490c] <+16>:  ldr    w10, [x13, x9, lsl #2]
+carry64[0x100074910] <+20>:  ubfx   x9, x1, #11, #5
+carry64[0x100074914] <+24>:  ldr    w11, [x13, x9, lsl #2]
+carry64[0x100074918] <+28>:  add    w9, w10, w12
+carry64[0x10007491c] <+32>:  add    w9, w9, w11
+carry64[0x100074920] <+36>:  ubfx   x14, x1, #21, #5
+carry64[0x100074924] <+40>:  str    w9, [x13, x14, lsl #2]
+carry64[0x100074928] <+44>:  add    x12, x10, x12
+carry64[0x10007492c] <+48>:  add    x12, x12, x11
+carry64[0x100074930] <+52>:  lsr    x12, x12, #32
+carry64[0x100074934] <+56>:  strb   w12, [x8, #0x2f4]
+carry64[0x100074938] <+60>:  tbnz   w1, #0xa, 0x100074944     ; <+72>
+carry64[0x10007493c] <+64>:  tbnz   w1, #0x0, 0x100074970     ; <+116>
+carry64[0x100074940] <+68>:  ret
+carry64[0x100074944] <+72>:  eor    w10, w9, w10
+carry64[0x100074948] <+76>:  eor    w11, w9, w11
+carry64[0x10007494c] <+80>:  and    w10, w10, w11
+carry64[0x100074950] <+84>:  ldrb   w11, [x8, #0x2f5]
+carry64[0x100074954] <+88>:  and    w11, w11, #0xfe
+carry64[0x100074958] <+92>:  lsr    w12, w10, #30
+carry64[0x10007495c] <+96>:  and    w12, w12, #0x2
+carry64[0x100074960] <+100>: bfxil  w12, w10, #31, #1
+carry64[0x100074964] <+104>: orr    w10, w12, w11
+carry64[0x100074968] <+108>: strb   w10, [x8, #0x2f5]
+carry64[0x10007496c] <+112>: tbz    w1, #0x0, 0x100074940     ; <+68>
+carry64[0x100074970] <+116>: sxtw   x10, w9
+carry64[0x100074974] <+120>: and    x10, x10, #0xf7ffffffffffffff
+carry64[0x100074978] <+124>: cmp    w9, #0x0
+carry64[0x10007497c] <+128>: mov    x9, #-0x8000000000000000  ; =-9223372036854775808
+carry64[0x100074980] <+132>: csel   x9, x9, x10, eq
+carry64[0x100074984] <+136>: ldrb   w10, [x8, #0x2f5]
+carry64[0x100074988] <+140>: lsr    x10, x10, #1
+carry64[0x10007498c] <+144>: orr    x9, x9, x10, lsl #59
+carry64[0x100074990] <+148>: str    x9, [x8, #0x2a0]
+carry64[0x100074994] <+152>: ret

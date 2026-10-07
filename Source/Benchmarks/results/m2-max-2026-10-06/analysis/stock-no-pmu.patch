@@ -1,0 +1,12 @@
+--- a/Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.cpp
++++ b/Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.cpp
+@@ -125,8 +125,7 @@
+ {
+   ppc_state.pc = ppc_state.npc;
+   ppc_state.downcount -= operands.downcount;
+-  PowerPC::UpdatePerformanceMonitor(operands.downcount, operands.num_load_stores,
+-                                    operands.num_fp_inst, ppc_state);
++  // Diagnostic: performance counters disabled.
+   if constexpr (profiled)
+     JitBlock::ProfileData::EndProfiling(operands.profile_data, operands.downcount);
+   return 0;

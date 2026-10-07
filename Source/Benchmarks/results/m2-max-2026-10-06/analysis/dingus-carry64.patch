@@ -1,0 +1,17 @@
+--- a/cpu/ppc/ppcopcodes.cpp
++++ b/cpu/ppc/ppcopcodes.cpp
+@@ -154,11 +154,9 @@
+     uint32_t xer_ca       = !!(ppc_state.spr[SPR::XER] & XER::CA);
+     uint32_t ppc_result_d = ppc_result_a + ppc_result_b + xer_ca;
+ 
+-    if ((ppc_result_d < ppc_result_a) || (xer_ca && (ppc_result_d == ppc_result_a))) {
+-        ppc_state.spr[SPR::XER] |= XER::CA;
+-    } else {
+-        ppc_state.spr[SPR::XER] &= ~XER::CA;
+-    }
++    uint64_t sum = uint64_t(ppc_result_a) + ppc_result_b + xer_ca;
++    ppc_state.spr[SPR::XER] = (ppc_state.spr[SPR::XER] & ~XER::CA) |
++                             (uint32_t(sum >> 32) * XER::CA);
+ 
+     if (ov)
+         ppc_setsoov(ppc_result_a, ~ppc_result_b, ppc_result_d);

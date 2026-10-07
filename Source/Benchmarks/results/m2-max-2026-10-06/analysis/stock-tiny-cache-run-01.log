@@ -1,0 +1,12 @@
+Core: Cached Interpreter
+Test size: 0x8000
+First few bytes:
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa
+Checksum: 0xF376152A
+Overhead Time: 0 ns
+(1) 96625 ns, 323.4153 MiB/s
+(2) 96583 ns, 323.5559 MiB/s
+(3) 96542 ns, 323.6933 MiB/s
+(4) 96750 ns, 322.9974 MiB/s
+(5) 96541 ns, 323.6967 MiB/s

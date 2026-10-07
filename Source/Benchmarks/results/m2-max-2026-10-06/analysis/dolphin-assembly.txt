@@ -1,0 +1,256 @@
+(lldb) target create "build-bench/Binaries/ppc-bench"
+Current executable set to '/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench' (arm64).
+(lldb) disassemble -n "Interpreter::addex(Interpreter&, UGeckoInstruction)"
+ppc-bench`Interpreter::addex:
+ppc-bench[0x100074820] <+0>:   ldr    x8, [x0, #0x10]
+ppc-bench[0x100074824] <+4>:   ldrb   w12, [x8, #0x2f4]
+ppc-bench[0x100074828] <+8>:   add    x14, x8, #0x20
+ppc-bench[0x10007482c] <+12>:  ubfx   x9, x1, #16, #5
+ppc-bench[0x100074830] <+16>:  ldr    w10, [x14, x9, lsl #2]
+ppc-bench[0x100074834] <+20>:  ubfx   x9, x1, #11, #5
+ppc-bench[0x100074838] <+24>:  ldr    w11, [x14, x9, lsl #2]
+ppc-bench[0x10007483c] <+28>:  add    w13, w11, w10
+ppc-bench[0x100074840] <+32>:  add    w9, w13, w12
+ppc-bench[0x100074844] <+36>:  ubfx   x15, x1, #21, #5
+ppc-bench[0x100074848] <+40>:  str    w9, [x14, x15, lsl #2]
+ppc-bench[0x10007484c] <+44>:  cmn    w10, w11
+ppc-bench[0x100074850] <+48>:  b.lo   0x10007485c               ; <+60>
+ppc-bench[0x100074854] <+52>:  mov    w12, #0x1                 ; =1
+ppc-bench[0x100074858] <+56>:  b      0x100074868               ; <+72>
+ppc-bench[0x10007485c] <+60>:  cbz    w12, 0x100074868          ; <+72>
+ppc-bench[0x100074860] <+64>:  cmn    w13, w12
+ppc-bench[0x100074864] <+68>:  cset   w12, hs
+ppc-bench[0x100074868] <+72>:  strb   w12, [x8, #0x2f4]
+ppc-bench[0x10007486c] <+76>:  tbnz   w1, #0xa, 0x100074878     ; <+88>
+ppc-bench[0x100074870] <+80>:  tbnz   w1, #0x0, 0x1000748a4     ; <+132>
+ppc-bench[0x100074874] <+84>:  ret
+ppc-bench[0x100074878] <+88>:  eor    w10, w9, w10
+ppc-bench[0x10007487c] <+92>:  eor    w11, w9, w11
+ppc-bench[0x100074880] <+96>:  and    w10, w10, w11
+ppc-bench[0x100074884] <+100>: ldrb   w11, [x8, #0x2f5]
+ppc-bench[0x100074888] <+104>: and    w11, w11, #0xfe
+ppc-bench[0x10007488c] <+108>: lsr    w12, w10, #30
+ppc-bench[0x100074890] <+112>: and    w12, w12, #0x2
+ppc-bench[0x100074894] <+116>: bfxil  w12, w10, #31, #1
+ppc-bench[0x100074898] <+120>: orr    w10, w12, w11
+ppc-bench[0x10007489c] <+124>: strb   w10, [x8, #0x2f5]
+ppc-bench[0x1000748a0] <+128>: tbz    w1, #0x0, 0x100074874     ; <+84>
+ppc-bench[0x1000748a4] <+132>: sxtw   x10, w9
+ppc-bench[0x1000748a8] <+136>: and    x10, x10, #0xf7ffffffffffffff
+ppc-bench[0x1000748ac] <+140>: cmp    w9, #0x0
+ppc-bench[0x1000748b0] <+144>: mov    x9, #-0x8000000000000000  ; =-9223372036854775808
+ppc-bench[0x1000748b4] <+148>: csel   x9, x9, x10, eq
+ppc-bench[0x1000748b8] <+152>: ldrb   w10, [x8, #0x2f5]
+ppc-bench[0x1000748bc] <+156>: lsr    x10, x10, #1
+ppc-bench[0x1000748c0] <+160>: orr    x9, x9, x10, lsl #59
+ppc-bench[0x1000748c4] <+164>: str    x9, [x8, #0x2a0]
+ppc-bench[0x1000748c8] <+168>: ret
+(lldb) disassemble -n "Interpreter::lwz(Interpreter&, UGeckoInstruction)"
+ppc-bench`Interpreter::lwz:
+ppc-bench[0x100075a6c] <+0>:  stp    x20, x19, [sp, #-0x20]!
+ppc-bench[0x100075a70] <+4>:  stp    x29, x30, [sp, #0x10]
+ppc-bench[0x100075a74] <+8>:  mov    x19, x1
+ppc-bench[0x100075a78] <+12>: ldr    x20, [x0, #0x10]
+ppc-bench[0x100075a7c] <+16>: ubfx   w8, w19, #16, #5
+ppc-bench[0x100075a80] <+20>: cbz    w8, 0x100075ab8           ; <+76>
+ppc-bench[0x100075a84] <+24>: add    x8, x20, w8, uxtw #2
+ppc-bench[0x100075a88] <+28>: ldr    w8, [x8, #0x20]
+ppc-bench[0x100075a8c] <+32>: add    w1, w8, w19, sxth
+ppc-bench[0x100075a90] <+36>: ldr    x0, [x0, #0x18]
+ppc-bench[0x100075a94] <+40>: bl     0x100082cc4               ; unsigned int PowerPC::MMU::Read<unsigned int>(unsigned int)
+ppc-bench[0x100075a98] <+44>: ldrb   w8, [x20, #0x2ec]
+ppc-bench[0x100075a9c] <+48>: tbnz   w8, #0x3, 0x100075aac     ; <+64>
+ppc-bench[0x100075aa0] <+52>: ubfx   x8, x19, #21, #5
+ppc-bench[0x100075aa4] <+56>: add    x8, x20, x8, lsl #2
+ppc-bench[0x100075aa8] <+60>: str    w0, [x8, #0x20]
+ppc-bench[0x100075aac] <+64>: ldp    x29, x30, [sp, #0x10]
+ppc-bench[0x100075ab0] <+68>: ldp    x20, x19, [sp], #0x20
+ppc-bench[0x100075ab4] <+72>: ret
+ppc-bench[0x100075ab8] <+76>: sxth   w1, w19
+ppc-bench[0x100075abc] <+80>: ldr    x0, [x0, #0x18]
+ppc-bench[0x100075ac0] <+84>: bl     0x100082cc4               ; unsigned int PowerPC::MMU::Read<unsigned int>(unsigned int)
+ppc-bench[0x100075ac4] <+88>: ldrb   w8, [x20, #0x2ec]
+ppc-bench[0x100075ac8] <+92>: tbz    w8, #0x3, 0x100075aa0     ; <+52>
+ppc-bench[0x100075acc] <+96>: b      0x100075aac               ; <+64>
+(lldb) disassemble -n "CachedInterpreter::Run()"
+ppc-bench`CachedInterpreter::Run:
+ppc-bench[0x10006d060] <+0>:   stp    x26, x25, [sp, #-0x50]!
+ppc-bench[0x10006d064] <+4>:   stp    x24, x23, [sp, #0x10]
+ppc-bench[0x10006d068] <+8>:   stp    x22, x21, [sp, #0x20]
+ppc-bench[0x10006d06c] <+12>:  stp    x20, x19, [sp, #0x30]
+ppc-bench[0x10006d070] <+16>:  stp    x29, x30, [sp, #0x40]
+ppc-bench[0x10006d074] <+20>:  mov    x19, x0
+ppc-bench[0x10006d078] <+24>:  ldr    x0, [x0, #0x1b8]
+ppc-bench[0x10006d07c] <+28>:  bl     0x100098754               ; Core::System::GetCoreTiming() const
+ppc-bench[0x10006d080] <+32>:  mov    x20, x0
+ppc-bench[0x10006d084] <+36>:  ldr    x0, [x19, #0x1b8]
+ppc-bench[0x10006d088] <+40>:  bl     0x100098748               ; Core::System::GetCPU() const
+ppc-bench[0x10006d08c] <+44>:  bl     0x1000088c4               ; Host_UpdateDisasmDialog()
+ppc-bench[0x10006d090] <+48>:  ldr    w8, [x0]
+ppc-bench[0x10006d094] <+52>:  cbz    w8, 0x10006d0b0           ; <+80>
+ppc-bench[0x10006d098] <+56>:  ldp    x29, x30, [sp, #0x40]
+ppc-bench[0x10006d09c] <+60>:  ldp    x20, x19, [sp, #0x30]
+ppc-bench[0x10006d0a0] <+64>:  ldp    x22, x21, [sp, #0x20]
+ppc-bench[0x10006d0a4] <+68>:  ldp    x24, x23, [sp, #0x10]
+ppc-bench[0x10006d0a8] <+72>:  ldp    x26, x25, [sp], #0x50
+ppc-bench[0x10006d0ac] <+76>:  ret
+ppc-bench[0x10006d0b0] <+80>:  mov    x21, x0
+ppc-bench[0x10006d0b4] <+84>:  adrp   x24, 0
+ppc-bench[0x10006d0b8] <+88>:  add    x24, x24, #0x1c           ; int CachedInterpreter::Interpret<false>(PowerPC::PowerPCState&, CachedInterpreter::InterpretOperands const&)
+ppc-bench[0x10006d0bc] <+92>:  adrp   x25, 0
+ppc-bench[0x10006d0c0] <+96>:  add    x25, x25, #0x38           ; int CachedInterpreter::Interpret<true>(PowerPC::PowerPCState&, CachedInterpreter::InterpretOperands const&)
+ppc-bench[0x10006d0c4] <+100>: mov    x0, x20
+ppc-bench[0x10006d0c8] <+104>: bl     0x1000203dc               ; CoreTiming::CoreTimingManager::Advance()
+ppc-bench[0x10006d0cc] <+108>: add    x0, x19, #0x268
+ppc-bench[0x10006d0d0] <+112>: bl     0x10007fae8               ; JitBaseBlockCache::Dispatch()
+ppc-bench[0x10006d0d4] <+116>: ldr    x22, [x19, #0x1c0]
+ppc-bench[0x10006d0d8] <+120>: cbz    x0, 0x10006d140           ; <+224>
+ppc-bench[0x10006d0dc] <+124>: mov    x23, x0
+ppc-bench[0x10006d0e0] <+128>: b      0x10006d100               ; <+160>
+ppc-bench[0x10006d0e4] <+132>: ldr    w8, [x23, #0x18]
+ppc-bench[0x10006d0e8] <+136>: add    w9, w8, #0x4
+ppc-bench[0x10006d0ec] <+140>: stp    w8, w9, [x22]
+ppc-bench[0x10006d0f0] <+144>: ldp    x0, x8, [x23, #0x8]
+ppc-bench[0x10006d0f4] <+148>: ldr    w1, [x23, #0x1c]
+ppc-bench[0x10006d0f8] <+152>: blr    x8
+ppc-bench[0x10006d0fc] <+156>: add    x23, x23, #0x20
+ppc-bench[0x10006d100] <+160>: mov    x1, x23
+ppc-bench[0x10006d104] <+164>: ldr    x8, [x1], #0x8
+ppc-bench[0x10006d108] <+168>: cmp    x8, x24
+ppc-bench[0x10006d10c] <+172>: b.eq   0x10006d0f0               ; <+144>
+ppc-bench[0x10006d110] <+176>: cmp    x8, x25
+ppc-bench[0x10006d114] <+180>: b.eq   0x10006d0e4               ; <+132>
+ppc-bench[0x10006d118] <+184>: mov    x0, x22
+ppc-bench[0x10006d11c] <+188>: blr    x8
+ppc-bench[0x10006d120] <+192>: add    x23, x23, w0, sxtw
+ppc-bench[0x10006d124] <+196>: cbnz   w0, 0x10006d100           ; <+160>
+ppc-bench[0x10006d128] <+200>: ldr    x8, [x19, #0x1c0]
+ppc-bench[0x10006d12c] <+204>: ldr    w9, [x8, #0x2f0]
+ppc-bench[0x10006d130] <+208>: ldr    w8, [x21]
+ppc-bench[0x10006d134] <+212>: cmp    w9, #0x1
+ppc-bench[0x10006d138] <+216>: b.ge   0x10006d168               ; <+264>
+ppc-bench[0x10006d13c] <+220>: b      0x10006d170               ; <+272>
+ppc-bench[0x10006d140] <+224>: ldr    w1, [x22]
+ppc-bench[0x10006d144] <+228>: ldr    x8, [x19]
+ppc-bench[0x10006d148] <+232>: ldr    x8, [x8, #0x48]
+ppc-bench[0x10006d14c] <+236>: mov    x0, x19
+ppc-bench[0x10006d150] <+240>: blr    x8
+ppc-bench[0x10006d154] <+244>: ldr    x8, [x19, #0x1c0]
+ppc-bench[0x10006d158] <+248>: ldr    w9, [x8, #0x2f0]
+ppc-bench[0x10006d15c] <+252>: ldr    w8, [x21]
+ppc-bench[0x10006d160] <+256>: cmp    w9, #0x1
+ppc-bench[0x10006d164] <+260>: b.lt   0x10006d170               ; <+272>
+ppc-bench[0x10006d168] <+264>: cbz    w8, 0x10006d0cc           ; <+108>
+ppc-bench[0x10006d16c] <+268>: b      0x10006d098               ; <+56>
+ppc-bench[0x10006d170] <+272>: cbz    w8, 0x10006d0c4           ; <+100>
+ppc-bench[0x10006d174] <+276>: b      0x10006d098               ; <+56>
+(lldb) disassemble -n "JitBaseBlockCache::Dispatch()"
+ppc-bench`JitBaseBlockCache::Dispatch:
+ppc-bench[0x10007fae8] <+0>:   stp    x24, x23, [sp, #-0x40]!
+ppc-bench[0x10007faec] <+4>:   stp    x22, x21, [sp, #0x10]
+ppc-bench[0x10007faf0] <+8>:   stp    x20, x19, [sp, #0x20]
+ppc-bench[0x10007faf4] <+12>:  stp    x29, x30, [sp, #0x30]
+ppc-bench[0x10007faf8] <+16>:  mov    x19, x0
+ppc-bench[0x10007fafc] <+20>:  ldr    x8, [x0, #0x8]
+ppc-bench[0x10007fb00] <+24>:  ldr    x8, [x8, #0x1c0]
+ppc-bench[0x10007fb04] <+28>:  ldr    x9, [x0, #0x80]
+ppc-bench[0x10007fb08] <+32>:  cbz    x9, 0x10007fb38           ; <+80>
+ppc-bench[0x10007fb0c] <+36>:  ldr    w20, [x8]
+ppc-bench[0x10007fb10] <+40>:  ldr    w2, [x8, #0x2e8]
+ppc-bench[0x10007fb14] <+44>:  lsr    x22, x20, #2
+ppc-bench[0x10007fb18] <+48>:  orr    x21, x22, x2, lsl #30
+ppc-bench[0x10007fb1c] <+52>:  ldr    x0, [x9, x21, lsl #3]
+ppc-bench[0x10007fb20] <+56>:  cbz    x0, 0x10007fba0           ; <+184>
+ppc-bench[0x10007fb24] <+60>:  ldp    x29, x30, [sp, #0x30]
+ppc-bench[0x10007fb28] <+64>:  ldp    x20, x19, [sp, #0x20]
+ppc-bench[0x10007fb2c] <+68>:  ldp    x22, x21, [sp, #0x10]
+ppc-bench[0x10007fb30] <+72>:  ldp    x24, x23, [sp], #0x40
+ppc-bench[0x10007fb34] <+76>:  ret
+ppc-bench[0x10007fb38] <+80>:  add    x23, x19, #0x88
+ppc-bench[0x10007fb3c] <+84>:  ldr    w21, [x8]
+ppc-bench[0x10007fb40] <+88>:  ldr    w20, [x8, #0x2e8]
+ppc-bench[0x10007fb44] <+92>:  ubfx   x22, x21, #2, #16
+ppc-bench[0x10007fb48] <+96>:  ldr    x0, [x23, x22, lsl #3]
+ppc-bench[0x10007fb4c] <+100>: cbz    x0, 0x10007fb68           ; <+128>
+ppc-bench[0x10007fb50] <+104>: ldr    w8, [x0, #0x2c]
+ppc-bench[0x10007fb54] <+108>: cmp    w8, w21
+ppc-bench[0x10007fb58] <+112>: b.ne   0x10007fb68               ; <+128>
+ppc-bench[0x10007fb5c] <+116>: ldr    w8, [x0, #0x28]
+ppc-bench[0x10007fb60] <+120>: cmp    w8, w20
+ppc-bench[0x10007fb64] <+124>: b.eq   0x10007fc10               ; <+296>
+ppc-bench[0x10007fb68] <+128>: mov    x0, x19
+ppc-bench[0x10007fb6c] <+132>: mov    x1, x21
+ppc-bench[0x10007fb70] <+136>: mov    x2, x20
+ppc-bench[0x10007fb74] <+140>: bl     0x10007f99c               ; JitBaseBlockCache::GetBlockFromStartAddress(unsigned int, CPUEmuFeatureFlags)
+ppc-bench[0x10007fb78] <+144>: cbz    x0, 0x10007fb24           ; <+60>
+ppc-bench[0x10007fb7c] <+148>: ldr    x8, [x19, #0x80]
+ppc-bench[0x10007fb80] <+152>: ldr    x9, [x0, #0x38]
+ppc-bench[0x10007fb84] <+156>: cbz    x8, 0x10007fbd4           ; <+236>
+ppc-bench[0x10007fb88] <+160>: add    x9, x8, x9, lsl #3
+ppc-bench[0x10007fb8c] <+164>: ldr    x10, [x9]
+ppc-bench[0x10007fb90] <+168>: ldr    x11, [x0, #0x20]
+ppc-bench[0x10007fb94] <+172>: cmp    x10, x11
+ppc-bench[0x10007fb98] <+176>: b.ne   0x10007fbf0               ; <+264>
+ppc-bench[0x10007fb9c] <+180>: b      0x10007fbe4               ; <+252>
+ppc-bench[0x10007fba0] <+184>: mov    x0, x19
+ppc-bench[0x10007fba4] <+188>: mov    x1, x20
+ppc-bench[0x10007fba8] <+192>: bl     0x10007f99c               ; JitBaseBlockCache::GetBlockFromStartAddress(unsigned int, CPUEmuFeatureFlags)
+ppc-bench[0x10007fbac] <+196>: cbz    x0, 0x10007fb24           ; <+60>
+ppc-bench[0x10007fbb0] <+200>: ldr    x8, [x19, #0x80]
+ppc-bench[0x10007fbb4] <+204>: cbz    x8, 0x10007fc28           ; <+320>
+ppc-bench[0x10007fbb8] <+208>: ldr    x9, [x0, #0x38]
+ppc-bench[0x10007fbbc] <+212>: add    x9, x8, x9, lsl #3
+ppc-bench[0x10007fbc0] <+216>: ldr    x10, [x9]
+ppc-bench[0x10007fbc4] <+220>: ldr    x11, [x0, #0x20]
+ppc-bench[0x10007fbc8] <+224>: cmp    x10, x11
+ppc-bench[0x10007fbcc] <+228>: b.ne   0x10007fc48               ; <+352>
+ppc-bench[0x10007fbd0] <+232>: b      0x10007fc3c               ; <+340>
+ppc-bench[0x10007fbd4] <+236>: add    x9, x23, x9, lsl #3
+ppc-bench[0x10007fbd8] <+240>: ldr    x8, [x9]
+ppc-bench[0x10007fbdc] <+244>: cmp    x8, x0
+ppc-bench[0x10007fbe0] <+248>: b.ne   0x10007fc08               ; <+288>
+ppc-bench[0x10007fbe4] <+252>: str    xzr, [x9]
+ppc-bench[0x10007fbe8] <+256>: ldr    x8, [x19, #0x80]
+ppc-bench[0x10007fbec] <+260>: cbz    x8, 0x10007fc08           ; <+288>
+ppc-bench[0x10007fbf0] <+264>: lsr    x9, x21, #2
+ppc-bench[0x10007fbf4] <+268>: mov    w9, w9
+ppc-bench[0x10007fbf8] <+272>: orr    x22, x9, x20, lsl #30
+ppc-bench[0x10007fbfc] <+276>: ldr    x9, [x0, #0x20]
+ppc-bench[0x10007fc00] <+280>: str    x9, [x8, x22, lsl #3]
+ppc-bench[0x10007fc04] <+284>: b      0x10007fc0c               ; <+292>
+ppc-bench[0x10007fc08] <+288>: str    x0, [x23, x22, lsl #3]
+ppc-bench[0x10007fc0c] <+292>: str    x22, [x0, #0x38]
+ppc-bench[0x10007fc10] <+296>: ldr    x0, [x0, #0x20]
+ppc-bench[0x10007fc14] <+300>: ldp    x29, x30, [sp, #0x30]
+ppc-bench[0x10007fc18] <+304>: ldp    x20, x19, [sp, #0x20]
+ppc-bench[0x10007fc1c] <+308>: ldp    x22, x21, [sp, #0x10]
+ppc-bench[0x10007fc20] <+312>: ldp    x24, x23, [sp], #0x40
+ppc-bench[0x10007fc24] <+316>: ret
+ppc-bench[0x10007fc28] <+320>: ldr    x8, [x0, #0x38]
+ppc-bench[0x10007fc2c] <+324>: add    x9, x19, x8, lsl #3
+ppc-bench[0x10007fc30] <+328>: ldr    x8, [x9, #0x88]!
+ppc-bench[0x10007fc34] <+332>: cmp    x8, x0
+ppc-bench[0x10007fc38] <+336>: b.ne   0x10007fc6c               ; <+388>
+ppc-bench[0x10007fc3c] <+340>: str    xzr, [x9]
+ppc-bench[0x10007fc40] <+344>: ldr    x8, [x19, #0x80]
+ppc-bench[0x10007fc44] <+348>: cbz    x8, 0x10007fc6c           ; <+388>
+ppc-bench[0x10007fc48] <+352>: ldr    x9, [x0, #0x20]
+ppc-bench[0x10007fc4c] <+356>: str    x9, [x8, x21, lsl #3]
+ppc-bench[0x10007fc50] <+360>: str    x21, [x0, #0x38]
+ppc-bench[0x10007fc54] <+364>: mov    x0, x9
+ppc-bench[0x10007fc58] <+368>: ldp    x29, x30, [sp, #0x30]
+ppc-bench[0x10007fc5c] <+372>: ldp    x20, x19, [sp, #0x20]
+ppc-bench[0x10007fc60] <+376>: ldp    x22, x21, [sp, #0x10]
+ppc-bench[0x10007fc64] <+380>: ldp    x24, x23, [sp], #0x40
+ppc-bench[0x10007fc68] <+384>: ret
+ppc-bench[0x10007fc6c] <+388>: ubfx   x8, x20, #2, #16
+ppc-bench[0x10007fc70] <+392>: add    x9, x19, w22, uxth #3
+ppc-bench[0x10007fc74] <+396>: str    x0, [x9, #0x88]
+ppc-bench[0x10007fc78] <+400>: ldr    x9, [x0, #0x20]
+ppc-bench[0x10007fc7c] <+404>: str    x8, [x0, #0x38]
+ppc-bench[0x10007fc80] <+408>: mov    x0, x9
+ppc-bench[0x10007fc84] <+412>: ldp    x29, x30, [sp, #0x30]
+ppc-bench[0x10007fc88] <+416>: ldp    x20, x19, [sp, #0x20]
+ppc-bench[0x10007fc8c] <+420>: ldp    x22, x21, [sp, #0x10]
+ppc-bench[0x10007fc90] <+424>: ldp    x24, x23, [sp], #0x40
+ppc-bench[0x10007fc94] <+428>: ret

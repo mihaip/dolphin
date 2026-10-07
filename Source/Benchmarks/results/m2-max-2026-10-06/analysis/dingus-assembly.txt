@@ -1,0 +1,32 @@
+(lldb) target create "/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/bin/Release/bench1"
+Current executable set to '/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/bin/Release/bench1' (arm64).
+(lldb) disassemble -s 0x10001f048 -c 28
+bench1`dppc_interpreter::ppc_adde<(field_rc)0, (field_ov)0>:
+bench1[0x10001f048] <+0>:   ubfx   w9, w0, #16, #5
+bench1[0x10001f04c] <+4>:   adrp   x8, 1759
+bench1[0x10001f050] <+8>:   add    x8, x8, #0x750            ; ppc_state
+bench1[0x10001f054] <+12>:  ubfx   w10, w0, #11, #5
+bench1[0x10001f058] <+16>:  add    x12, x8, #0x104
+bench1[0x10001f05c] <+20>:  ldr    w11, [x12, w9, uxtw #2]
+bench1[0x10001f060] <+24>:  ldr    w9, [x12, w10, uxtw #2]
+bench1[0x10001f064] <+28>:  ldr    w10, [x8, #0x198]
+bench1[0x10001f068] <+32>:  and    w12, w10, #0x20000000
+bench1[0x10001f06c] <+36>:  add    w9, w9, w11
+bench1[0x10001f070] <+40>:  add    w9, w9, w12, lsr #29
+bench1[0x10001f074] <+44>:  cmp    w9, w11
+bench1[0x10001f078] <+48>:  b.lo   0x10001f0a0               ; <+88>
+bench1[0x10001f07c] <+52>:  cmp    w12, #0x0
+bench1[0x10001f080] <+56>:  ccmp   w9, w11, #0x0, ne
+bench1[0x10001f084] <+60>:  b.eq   0x10001f0a0               ; <+88>
+bench1[0x10001f088] <+64>:  and    w10, w10, #0xdfffffff
+bench1[0x10001f08c] <+68>:  str    w10, [x8, #0x198]
+bench1[0x10001f090] <+72>:  ubfx   w10, w0, #21, #5
+bench1[0x10001f094] <+76>:  add    x8, x8, w10, uxtw #2
+bench1[0x10001f098] <+80>:  str    w9, [x8, #0x104]
+bench1[0x10001f09c] <+84>:  ret
+bench1[0x10001f0a0] <+88>:  orr    w10, w10, #0x20000000
+bench1[0x10001f0a4] <+92>:  str    w10, [x8, #0x198]
+bench1[0x10001f0a8] <+96>:  ubfx   w10, w0, #21, #5
+bench1[0x10001f0ac] <+100>: add    x8, x8, w10, uxtw #2
+bench1[0x10001f0b0] <+104>: str    w9, [x8, #0x104]
+bench1[0x10001f0b4] <+108>: ret

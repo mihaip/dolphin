@@ -1,0 +1,64 @@
+Core: Cached Interpreter
+Test size: 0x8000
+First few bytes:
+108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3
+4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa
+Checksum: 0xF376152A
+Block 0 bytes 120
+Interpret<write_pc=false>(current_pc=0x00000000, inst=0x3863fffc)
+Interpret<write_pc=false>(current_pc=0x00000004, inst=0x7c861671)
+Interpret<write_pc=true >(current_pc=0x00000008, inst=0x41820090)
+EndBlock<profiled=false>(downcount=3, num_load_stores=0, num_fp_inst=0)
+Block c bytes 88
+Interpret<write_pc=false>(current_pc=0x0000000c, inst=0x70600002)
+Interpret<write_pc=true >(current_pc=0x00000010, inst=0x41e2001c)
+EndBlock<profiled=false>(downcount=2, num_load_stores=0, num_fp_inst=0)
+Block 2c bytes 88
+Interpret<write_pc=false>(current_pc=0x0000002c, inst=0x70c60003)
+Interpret<write_pc=true >(current_pc=0x00000030, inst=0x41820014)
+EndBlock<profiled=false>(downcount=2, num_load_stores=0, num_fp_inst=0)
+Block 44 bytes 88
+Interpret<write_pc=false>(current_pc=0x00000044, inst=0x5486e13f)
+Interpret<write_pc=true >(current_pc=0x00000048, inst=0x41820050)
+EndBlock<profiled=false>(downcount=2, num_load_stores=0, num_fp_inst=0)
+Block 4c bytes 312
+Interpret<write_pc=false>(current_pc=0x0000004c, inst=0x80030004)
+Interpret<write_pc=false>(current_pc=0x00000050, inst=0x7cc903a6)
+Interpret<write_pc=false>(current_pc=0x00000054, inst=0x80c30008)
+Interpret<write_pc=false>(current_pc=0x00000058, inst=0x7ca50114)
+Interpret<write_pc=false>(current_pc=0x0000005c, inst=0x80e3000c)
+Interpret<write_pc=false>(current_pc=0x00000060, inst=0x7ca53114)
+Interpret<write_pc=false>(current_pc=0x00000064, inst=0x85030010)
+Interpret<write_pc=false>(current_pc=0x00000068, inst=0x7ca53914)
+Interpret<write_pc=true >(current_pc=0x0000006c, inst=0x42400028)
+EndBlock<profiled=false>(downcount=10, num_load_stores=4, num_fp_inst=0)
+Block 70 bytes 312
+Interpret<write_pc=false>(current_pc=0x00000070, inst=0x80030004)
+Interpret<write_pc=false>(current_pc=0x00000074, inst=0x7ca54114)
+Interpret<write_pc=false>(current_pc=0x00000078, inst=0x80c30008)
+Interpret<write_pc=false>(current_pc=0x0000007c, inst=0x7ca50114)
+Interpret<write_pc=false>(current_pc=0x00000080, inst=0x80e3000c)
+Interpret<write_pc=false>(current_pc=0x00000084, inst=0x7ca53114)
+Interpret<write_pc=false>(current_pc=0x00000088, inst=0x85030010)
+Interpret<write_pc=false>(current_pc=0x0000008c, inst=0x7ca53914)
+Interpret<write_pc=true >(current_pc=0x00000090, inst=0x4200ffe0)
+EndBlock<profiled=false>(downcount=9, num_load_stores=4, num_fp_inst=0)
+Block 94 bytes 120
+Interpret<write_pc=false>(current_pc=0x00000094, inst=0x7ca54114)
+Interpret<write_pc=false>(current_pc=0x00000098, inst=0x70800002)
+Interpret<write_pc=true >(current_pc=0x0000009c, inst=0x41e20010)
+EndBlock<profiled=false>(downcount=3, num_load_stores=0, num_fp_inst=0)
+Block ac bytes 88
+Interpret<write_pc=false>(current_pc=0x000000ac, inst=0x70800001)
+Interpret<write_pc=true >(current_pc=0x000000b0, inst=0x41e20010)
+EndBlock<profiled=false>(downcount=2, num_load_stores=0, num_fp_inst=0)
+Block c0 bytes 80
+Interpret<write_pc=false>(current_pc=0x000000c0, inst=0x7c650194)
+HLEFunction(current_pc=0x000000c4, hook_index=1) ["HBReload"]
+EndBlock<profiled=false>(downcount=4, num_load_stores=0, num_fp_inst=0)
+Overhead Time: 0 ns
+(1) 121375 ns, 257.4665 MiB/s
+(2) 105834 ns, 295.2737 MiB/s
+(3) 98916 ns, 315.9246 MiB/s
+(4) 94583 ns, 330.3976 MiB/s
+(5) 94250 ns, 331.5650 MiB/s

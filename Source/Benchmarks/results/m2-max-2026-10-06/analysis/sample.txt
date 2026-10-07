@@ -1,0 +1,97 @@
+Analysis of sampling ppc-bench (pid 74050) every 1 millisecond
+Process:         ppc-bench [74050]
+Path:            /Users/USER/*/ppc-bench
+Load Address:    0x1007fc000
+Identifier:      ppc-bench
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  bash [73955]
+Target Type:     live task
+
+Date/Time:       2026-10-06 21:46:47.907 -0700
+Launch Time:     2026-10-06 21:46:47.860 -0700
+OS Version:      macOS 15.7.9 (24G830)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         97.4M
+Physical footprint (peak):  97.4M
+Idle exit:                  untracked
+----
+
+Call graph:
+    3878 Thread_176871896   DispatchQueue_1: com.apple.main-thread  (serial)
+    + 1549 CachedInterpreter::Run()  (in ppc-bench) + 156  [0x1008691d8]
+    + ! 1290 Interpreter::addex(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 60,52,...  [0x100870938,0x100870930,...]
+    + ! 172 Interpreter::lwz(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 12,0  [0x100871b54,0x100871b48]
+    + ! 60 Interpreter::lwzu(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 0,20  [0x100871bac,0x100871bc0]
+    + ! 26 Interpreter::bcx(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 24,20,...  [0x10086bf54,0x10086bf50,...]
+    + ! 1 Interpreter::addi(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 0  [0x10086fc20]
+    + 418 CachedInterpreter::Run()  (in ppc-bench) + 164,148,...  [0x1008691e0,0x1008691d0,...]
+    + 374 PowerPC::MMU::ReadFromHardware<(PowerPC::XCheckTLBFlag)1, unsigned int, false>(unsigned int)  (in ppc-bench) + 888,416,...  [0x10087f1ec,0x10087f014,...]
+    + 268 PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench) + 24  [0x10087ee44]
+    + ! 268 PowerPC::MMU::ReadFromHardware<(PowerPC::XCheckTLBFlag)1, unsigned int, false>(unsigned int)  (in ppc-bench) + 12,8,...  [0x10087ee80,0x10087ee7c,...]
+    + 267 CachedInterpreter::EndBlock<false>(PowerPC::PowerPCState&, CachedInterpreter::EndBlockOperands<false> const&)  (in ppc-bench) + 48  [0x1008695d8]
+    + ! 267 PowerPC::UpdatePerformanceMonitor(unsigned int, unsigned int, unsigned int, PowerPC::PowerPCState&)  (in ppc-bench) + 0,8,...  [0x100888c48,0x100888c50,...]
+    + 216 PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench) + 52  [0x10087ee60]
+    + ! 216 PowerPC::MMU::Memcheck(unsigned int, unsigned long long, bool, unsigned long)  (in ppc-bench) + 28  [0x10087e920]
+    + 172 PowerPC::MMU::Memcheck(unsigned int, unsigned long long, bool, unsigned long)  (in ppc-bench) + 216,220  [0x10087e9dc,0x10087e9e0]
+    + 143 Interpreter::bcx(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 192,64,...  [0x10086bffc,0x10086bf7c,...]
+    + 120 Interpreter::lwz(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 68,44  [0x100871b8c,0x100871b74]
+    + 61 CachedInterpreter::Run()  (in ppc-bench) + 116  [0x1008691b0]
+    + ! 61 JitBaseBlockCache::Dispatch()  (in ppc-bench) + 28,24  [0x10087bc6c,0x10087bc68]
+    + 59 PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench) + 64  [0x10087ee6c]
+    + 57 JitBaseBlockCache::Dispatch()  (in ppc-bench) + 72,52  [0x10087bc98,0x10087bc84]
+    + 54 CachedInterpreter::EndBlock<false>(PowerPC::PowerPCState&, CachedInterpreter::EndBlockOperands<false> const&)  (in ppc-bench) + 52  [0x1008695dc]
+    + 43 CachedInterpreter::Run()  (in ppc-bench) + 192  [0x1008691fc]
+    + ! 43 CachedInterpreter::EndBlock<false>(PowerPC::PowerPCState&, CachedInterpreter::EndBlockOperands<false> const&)  (in ppc-bench) + 20,0  [0x1008695bc,0x1008695a8]
+    + 42 Interpreter::lwzu(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 80  [0x100871bfc]
+    + 26 Interpreter::lwzu(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 48  [0x100871bdc]
+    + ! 26 PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench) + 0,4,...  [0x10087ee2c,0x10087ee30,...]
+    + 5 Interpreter::lwz(Interpreter&, UGeckoInstruction)  (in ppc-bench) + 44  [0x100871b74]
+    + ! 5 PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench) + 8  [0x10087ee34]
+    + 3 CPU::CPUManager::SetStepping(bool)  (in ppc-bench) + 304  [0x10083f124]
+    + ! 3 std::mutex::unlock()  (in libc++.1.dylib) + 16  [0x193e9d428]
+    + !   3 pthread_mutex_unlock  (in libsystem_pthread.dylib) + 68  [0x193f668e8]
+    + 1 main  (in ppc-bench) + 1440  [0x100803d50]
+    +   1 std::chrono::steady_clock::now()  (in libc++.1.dylib) + 28  [0x193e8af44]
+    +     1 clock_gettime  (in libsystem_c.dylib) + 60  [0x193e0a790]
+    +       1 clock_gettime_nsec_np  (in libsystem_c.dylib) + 400  [0x193dfd178]
+    +         1 mach_continuous_time  (in libsystem_kernel.dylib) + 84  [0x193f2a060]
+    3878 Thread_176871898: org.libusb.device-hotplug
+    + 3878 thread_start  (in libsystem_pthread.dylib) + 8  [0x193f66b80]
+    +   3878 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x193f6bbc8]
+    +     3878 darwin_event_thread_main  (in libusb-1.0.0.dylib) + 408  [0x101962c1c]
+    +       3878 CFRunLoopRun  (in CoreFoundation) + 64  [0x1940ce314]
+    +         3878 CFRunLoopRunSpecific  (in CoreFoundation) + 572  [0x194054858]
+    +           3878 __CFRunLoopRun  (in CoreFoundation) + 1208  [0x194055398]
+    +             3878 __CFRunLoopServiceMachPort  (in CoreFoundation) + 160  [0x194056a7c]
+    +               3878 mach_msg  (in libsystem_kernel.dylib) + 24  [0x193f29fa8]
+    +                 3878 mach_msg_overwrite  (in libsystem_kernel.dylib) + 484  [0x193f32764]
+    +                   3878 mach_msg2_internal  (in libsystem_kernel.dylib) + 76  [0x193f3c338]
+    +                     3878 mach_msg2_trap  (in libsystem_kernel.dylib) + 8  [0x193f29c34]
+    3878 Thread_176871899: libusb thread
+      3878 thread_start  (in libsystem_pthread.dylib) + 8  [0x193f66b80]
+        3878 LibusbUtils::Context::Impl::EventThread()  (in ppc-bench) + 136  [0x100863798]
+          3878 libusb_handle_events_timeout_completed  (in libusb-1.0.0.dylib) + 380  [0x10195ec50]
+            3878 handle_events  (in libusb-1.0.0.dylib) + 176  [0x10195ef54]
+              3878 usbi_wait_for_events  (in libusb-1.0.0.dylib) + 100  [0x101960324]
+                3878 poll  (in libsystem_kernel.dylib) + 8  [0x193f32498]
+
+Total number in stack (recursive counted multiple, when >=5):
+
+Sort by top of stack, same collapsed (when >= 5):
+        mach_msg2_trap  (in libsystem_kernel.dylib)        3878
+        poll  (in libsystem_kernel.dylib)        3878
+        Interpreter::addex(Interpreter&, UGeckoInstruction)  (in ppc-bench)        1290
+        PowerPC::MMU::ReadFromHardware<(PowerPC::XCheckTLBFlag)1, unsigned int, false>(unsigned int)  (in ppc-bench)        642
+        CachedInterpreter::Run()  (in ppc-bench)        418
+        PowerPC::MMU::Memcheck(unsigned int, unsigned long long, bool, unsigned long)  (in ppc-bench)        388
+        Interpreter::lwz(Interpreter&, UGeckoInstruction)  (in ppc-bench)        292
+        PowerPC::UpdatePerformanceMonitor(unsigned int, unsigned int, unsigned int, PowerPC::PowerPCState&)  (in ppc-bench)        267
+        Interpreter::bcx(Interpreter&, UGeckoInstruction)  (in ppc-bench)        169
+        JitBaseBlockCache::Dispatch()  (in ppc-bench)        118
+        Interpreter::lwzu(Interpreter&, UGeckoInstruction)  (in ppc-bench)        102
+        CachedInterpreter::EndBlock<false>(PowerPC::PowerPCState&, CachedInterpreter::EndBlockOperands<false> const&)  (in ppc-bench)        97
+        PowerPC::MMU::Read<unsigned int>(unsigned int)  (in ppc-bench)        90

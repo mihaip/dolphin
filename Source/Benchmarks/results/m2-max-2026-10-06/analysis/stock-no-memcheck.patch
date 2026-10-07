@@ -1,0 +1,11 @@
+--- a/Source/Core/Core/PowerPC/MMU.cpp
++++ b/Source/Core/Core/PowerPC/MMU.cpp
+@@ -639,7 +639,7 @@
+ T MMU::Read(const u32 address)
+ {
+   T var = ReadFromHardware<XCheckTLBFlag::Read, T>(address);
+-  Memcheck(address, var, false, sizeof(T));
++  // Diagnostic: no watchpoints installed.
+   return var;
+ }
+ template u8 MMU::Read<u8>(const u32 address);

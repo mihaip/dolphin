@@ -1,0 +1,50 @@
+{
+  "stock-baseline": {
+    "median_ns": 99312.0,
+    "min_ns": 98625,
+    "max_ns": 120917,
+    "batches": 50
+  },
+  "stock-carry64": {
+    "median_ns": 67292.0,
+    "min_ns": 67250,
+    "max_ns": 86666,
+    "batches": 50
+  },
+  "stock-no-memcheck": {
+    "median_ns": 81875.0,
+    "min_ns": 81292,
+    "max_ns": 105791,
+    "batches": 50
+  },
+  "stock-direct-ram": {
+    "median_ns": 71916.0,
+    "min_ns": 71583,
+    "max_ns": 75084,
+    "batches": 50
+  },
+  "stock-no-pmu": {
+    "median_ns": 93750.0,
+    "min_ns": 93292,
+    "max_ns": 98084,
+    "batches": 50
+  },
+  "stock-tiny-cache": {
+    "median_ns": 96333.0,
+    "min_ns": 95750,
+    "max_ns": 96750,
+    "batches": 50
+  },
+  "dingus": {
+    "median_ns": 80209.0,
+    "min_ns": 80000,
+    "max_ns": 80666,
+    "batches": 50
+  },
+  "dingus-carry64": {
+    "median_ns": 58562.0,
+    "min_ns": 58458,
+    "max_ns": 61125,
+    "batches": 50
+  }
+}

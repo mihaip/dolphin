@@ -1,0 +1,16 @@
+--- a/Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.cpp
++++ b/Source/Core/Core/PowerPC/CachedInterpreter/CachedInterpreter.cpp
+@@ -54,7 +54,12 @@
+ 
+ void CachedInterpreter::ExecuteOneBlock()
+ {
+-  const u8* normal_entry = m_block_cache.Dispatch();
++  // Diagnostic: immutable code, fixed CPU mode, only 50 instruction addresses.
++  static const u8* entries[50]{};
++  auto& entry = entries[m_ppc_state.pc / 4];
++  const u8* normal_entry = entry;
++  if (!normal_entry)
++    normal_entry = entry = m_block_cache.Dispatch();
+   if (!normal_entry)
+   {
+     Jit(m_ppc_state.pc);

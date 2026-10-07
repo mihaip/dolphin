@@ -1,0 +1,28 @@
+--- a/Source/Core/Core/PowerPC/Interpreter/Interpreter_LoadStore.cpp
++++ b/Source/Core/Core/PowerPC/Interpreter/Interpreter_LoadStore.cpp
+@@ -11,6 +11,7 @@
+ 
+ #include "Core/Config/MainSettings.h"
+ #include "Core/ConfigManager.h"
++#include "Core/HW/Memmap.h"
+ #include "Core/PowerPC/Interpreter/ExceptionUtils.h"
+ #include "Core/PowerPC/Interpreter/Interpreter_FPUtils.h"
+ #include "Core/PowerPC/JitInterface.h"
+@@ -321,7 +322,7 @@
+ {
+   auto& ppc_state = interpreter.m_ppc_state;
+   const u32 address = Helper_Get_EA(ppc_state, inst);
+-  const u32 temp = interpreter.m_mmu.Read<u32>(address);
++  const u32 temp = Common::swap32(interpreter.m_system.GetMemory().GetRAM() + address);
+ 
+   if (!(ppc_state.Exceptions & EXCEPTION_DSI))
+   {
+@@ -333,7 +334,7 @@
+ {
+   auto& ppc_state = interpreter.m_ppc_state;
+   const u32 address = Helper_Get_EA_U(ppc_state, inst);
+-  const u32 temp = interpreter.m_mmu.Read<u32>(address);
++  const u32 temp = Common::swap32(interpreter.m_system.GetMemory().GetRAM() + address);
+ 
+   if (!(ppc_state.Exceptions & EXCEPTION_DSI))
+   {

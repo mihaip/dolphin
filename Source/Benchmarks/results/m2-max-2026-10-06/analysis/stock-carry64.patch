@@ -1,0 +1,11 @@
+--- a/Source/Core/Core/PowerPC/Interpreter/Interpreter_Integer.cpp
++++ b/Source/Core/Core/PowerPC/Interpreter/Interpreter_Integer.cpp
+@@ -453,7 +453,7 @@
+   const u32 result = a + b + carry;
+ 
+   ppc_state.gpr[inst.RD] = result;
+-  ppc_state.SetCarry(Helper_Carry(a, b) || (carry != 0 && Helper_Carry(a + b, carry)));
++  ppc_state.SetCarry((u64{a} + u64{b} + carry) >> 32);
+ 
+   if (inst.OE)
+     ppc_state.SetXER_OV(HasAddOverflowed(a, b, result));
