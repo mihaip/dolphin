@@ -1,0 +1,2 @@
+# Preserve captured console output, including Loguru's padded header.
+results/**/*.log whitespace=-blank-at-eol

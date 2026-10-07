@@ -51,7 +51,7 @@ def main():
                                     ns=int(ns), mib_per_s=float(rate)))
             print(f'Run {run + 1}: {name} OK', flush=True)
     with (args.output / 'batches.csv').open('w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=records[0].keys())
+        writer = csv.DictWriter(f, fieldnames=records[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(records)
     summary = {}
