@@ -1,0 +1,159 @@
+Correctness: 549208 reference cases per version passed
+Measured adde
+Measured addic
+Measured addc
+Measured addme
+Measured addze
+Measured subfic
+Measured subfc
+Measured subfe
+Measured subfme
+Measured subfze
+Measured add
+Measured subf
+{
+  "adde": {
+    "random": {
+      "before_ns": 4.9403709,
+      "after_ns": 2.0793042,
+      "change_percent": -57.91198187164449
+    },
+    "predictable": {
+      "before_ns": 2.7969375000000003,
+      "after_ns": 3.1497916999999998,
+      "change_percent": 12.615734173538007
+    }
+  },
+  "addic": {
+    "random": {
+      "before_ns": 3.8367833,
+      "after_ns": 3.8392834000000002,
+      "change_percent": 0.0651613553468211
+    },
+    "predictable": {
+      "before_ns": 2.6759416,
+      "after_ns": 2.6770667,
+      "change_percent": 0.04204501323945564
+    }
+  },
+  "addc": {
+    "random": {
+      "before_ns": 1.9462833000000002,
+      "after_ns": 1.9522,
+      "change_percent": 0.30399993669985026
+    },
+    "predictable": {
+      "before_ns": 2.7975583000000004,
+      "after_ns": 2.8288041,
+      "change_percent": 1.1168954012504395
+    }
+  },
+  "addme": {
+    "random": {
+      "before_ns": 3.8545,
+      "after_ns": 3.7627458000000003,
+      "change_percent": -2.380443637307028
+    },
+    "predictable": {
+      "before_ns": 3.7393958,
+      "after_ns": 3.4198458,
+      "change_percent": -8.545498179144339
+    }
+  },
+  "addze": {
+    "random": {
+      "before_ns": 3.6868125,
+      "after_ns": 3.6859833,
+      "change_percent": -0.02249097289324098
+    },
+    "predictable": {
+      "before_ns": 3.1187208,
+      "after_ns": 3.1241083,
+      "change_percent": 0.17274710836570062
+    }
+  },
+  "subfic": {
+    "random": {
+      "before_ns": 3.8490291,
+      "after_ns": 3.8269625,
+      "change_percent": -0.5733030181559351
+    },
+    "predictable": {
+      "before_ns": 2.7331166,
+      "after_ns": 2.7160126,
+      "change_percent": -0.6258057193754496
+    }
+  },
+  "subfc": {
+    "random": {
+      "before_ns": 3.6974292,
+      "after_ns": 3.8155417,
+      "change_percent": 3.1944492676154512
+    },
+    "predictable": {
+      "before_ns": 2.8346001000000003,
+      "after_ns": 2.8143792000000003,
+      "change_percent": -0.7133598845212807
+    }
+  },
+  "subfe": {
+    "random": {
+      "before_ns": 3.9580209,
+      "after_ns": 3.8448876,
+      "change_percent": -2.85833003054633
+    },
+    "predictable": {
+      "before_ns": 3.4617458,
+      "after_ns": 3.1343500000000004,
+      "change_percent": -9.457534403594847
+    }
+  },
+  "subfme": {
+    "random": {
+      "before_ns": 3.6480832999999997,
+      "after_ns": 3.7990500000000003,
+      "change_percent": 4.138247062505407
+    },
+    "predictable": {
+      "before_ns": 2.8054,
+      "after_ns": 3.3884333,
+      "change_percent": 20.78253724959007
+    }
+  },
+  "subfze": {
+    "random": {
+      "before_ns": 3.6547833,
+      "after_ns": 3.7286,
+      "change_percent": 2.0197285020975064
+    },
+    "predictable": {
+      "before_ns": 2.8455667,
+      "after_ns": 3.1197542,
+      "change_percent": 9.635602637604656
+    }
+  },
+  "add": {
+    "random": {
+      "before_ns": 3.6272083,
+      "after_ns": 3.6494292,
+      "change_percent": 0.6126171469115871
+    },
+    "predictable": {
+      "before_ns": 2.5544209,
+      "after_ns": 2.5190333,
+      "change_percent": -1.3853472620741658
+    }
+  },
+  "subf": {
+    "random": {
+      "before_ns": 3.6364,
+      "after_ns": 3.6404416,
+      "change_percent": 0.111142888571103
+    },
+    "predictable": {
+      "before_ns": 2.5509959,
+      "after_ns": 2.5243625,
+      "change_percent": -1.0440393102944645
+    }
+  }
+}

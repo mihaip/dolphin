@@ -1,0 +1,36 @@
+{
+  "before": {
+    "ppc_exec": {
+      "median_ns": 80167.0,
+      "minimum_ns": 80000,
+      "maximum_ns": 103250,
+      "batch_minima": 150
+    },
+    "ppc_exec_until": {
+      "median_ns": 80291.0,
+      "minimum_ns": 80042,
+      "maximum_ns": 83666,
+      "batch_minima": 150
+    }
+  },
+  "after": {
+    "ppc_exec": {
+      "median_ns": 58583.0,
+      "minimum_ns": 58375,
+      "maximum_ns": 71458,
+      "batch_minima": 150
+    },
+    "ppc_exec_until": {
+      "median_ns": 58500.0,
+      "minimum_ns": 58375,
+      "maximum_ns": 61208,
+      "batch_minima": 150
+    }
+  },
+  "protocol": "30 rotated runs per variant; 5 batches of 200 samples per entry point",
+  "checksum": "0xF376152A",
+  "binaries_sha256": {
+    "before": "40080a20f5091414c535d43d11ccb6b970a70c27c107026dd418d9f0fc32730c",
+    "after": "87c1f148c880b1cd6c58d236612280a7fc8cbc50dff2bdeadbe6af6505ac26bf"
+  }
+}

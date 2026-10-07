@@ -1,0 +1,29 @@
+{
+  "original_branch": "master",
+  "original_tip": "1baa8eb10ccf516b31403062afa9b63028a13f71",
+  "before": "8652a5b8c4ebf42bc7acb3fc51167eaaf21364d5",
+  "after": "74c60fcd5788656c0e9b524229899529cbd008d6",
+  "upstream_branch": "benchmark-upstream-carry",
+  "config": "Release native arm64 -O3 -DNDEBUG, no LTO/sanitizers",
+  "host": "Apple M2 Max, arm64, macOS 15.7.9",
+  "native_compiler": "Apple Clang 17.0.0, Xcode 26.3",
+  "wasm_compiler": "Emscripten 6.0.11",
+  "wasm_sha256": {
+    "before": "6fc2550ce085e05fa618741da2dfc2142385d7f32d0c4be57066f66df2b6279b",
+    "after": "54331f7e4ca404206bbdf55d7510286cac302fa32a14476230d2b4cd09f489e0"
+  },
+  "correctness_cases_per_revision_per_engine": 549208,
+  "wasm_build_scope": "Actual ppcopcodes.cpp from each full upstream source archive; isolated handlers",
+  "wasm_configs": {
+    "non_lto": "-O3 -DNDEBUG",
+    "lto": "-O3 -flto -DNDEBUG"
+  },
+  "wasm_lto_sha256": {
+    "before": "ddb0d52fa704fcef342c690301da1281fe46d86d34179859bc9dbb9ada9bebdf",
+    "after": "58e7453423255f2d927f720f653a0d5fa4d249bbc2ba762f77dab0d0bdaefe59"
+  },
+  "native_sha256": {
+    "before": "40080a20f5091414c535d43d11ccb6b970a70c27c107026dd418d9f0fc32730c",
+    "after": "87c1f148c880b1cd6c58d236612280a7fc8cbc50dff2bdeadbe6af6505ac26bf"
+  }
+}

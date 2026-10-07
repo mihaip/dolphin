@@ -140,3 +140,8 @@ not the mean or median of individual execution times. Initialization, random
 buffer generation, validation, and printing are excluded from each timed sample.
 The stop path and normal CPU timing-slice handling are included. No forced
 termination or timeout was used for the recorded runs.
+
+The [upstream DingusPPC carry review](results/m2-max-2026-10-07-upstream-carry/)
+compares commit `74c60fcd` against its parent using upstream-only native builds.
+It also includes correctness checks and isolated Wasm handler measurements in
+V8 and JavaScriptCore, with and without LTO.
