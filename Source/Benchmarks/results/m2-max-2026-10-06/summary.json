@@ -1,0 +1,76 @@
+{
+  "runs": 10,
+  "samples_per_batch": 200,
+  "bytes_per_sample": 32768,
+  "checksum": "F376152A",
+  "input_prefix": [
+    "108f6b493b318d8fbdf514d30c35ca13514d4ee5568b008fefbcc075332a03d3",
+    "4f30619a9f7ebba90f6649c903617aaed2f05a080bf74be6638216eef98b30aa"
+  ],
+  "commands": [
+    [
+      "dolphin-cached",
+      [
+        "/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench",
+        "cached"
+      ]
+    ],
+    [
+      "dingus",
+      [
+        "/Users/mihai/Developer/source/infinite-mac/dingusppc/build-xcode/bin/Release/bench1"
+      ]
+    ],
+    [
+      "pearpc",
+      [
+        "/Users/mihai/Developer/source/infinite-mac/pearpc/build-native-bench/source/src/ppc",
+        "bench"
+      ]
+    ],
+    [
+      "dolphin-interpreter",
+      [
+        "/Users/mihai/Developer/source/retro/dolphin/build-bench/Binaries/ppc-bench",
+        "interpreter"
+      ]
+    ]
+  ],
+  "summary": {
+    "dingus-exec": {
+      "batches": 50,
+      "median_ns": 80395.5,
+      "min_ns": 80208,
+      "max_ns": 82875,
+      "mib_per_s": 388.70334782419417
+    },
+    "dingus-exec-until": {
+      "batches": 50,
+      "median_ns": 82354.0,
+      "min_ns": 80125,
+      "max_ns": 82833,
+      "mib_per_s": 379.45940695048205
+    },
+    "dolphin-cached": {
+      "batches": 50,
+      "median_ns": 98334.0,
+      "min_ns": 97833,
+      "max_ns": 106125,
+      "mib_per_s": 317.7944556308093
+    },
+    "dolphin-interpreter": {
+      "batches": 50,
+      "median_ns": 321688.0,
+      "min_ns": 319250,
+      "max_ns": 329875,
+      "mib_per_s": 97.14381636865534
+    },
+    "pearpc": {
+      "batches": 50,
+      "median_ns": 73083.0,
+      "min_ns": 71083,
+      "max_ns": 73583,
+      "mib_per_s": 427.5960209624673
+    }
+  }
+}
